@@ -3,4 +3,24 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 h2 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    }
+}
+.custom-button {
+  background-color: #4CAF50; /* Green background */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 25px; /* This makes the button rounded */
+  transition: all 0.3s ease; /* This will smooth out the hover effect */
+}
+
+.custom-button:hover {
+  background-color: #45a049; /* Darker green on hover */
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); /* Add a shadow effect on hover */
+  transform: translateY(-2px); /* Slight lift effect on hover */
+}

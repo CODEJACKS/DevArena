@@ -1,0 +1,21 @@
+p {
+  color: rgb(172, 108, 108);
+}
+h1 {
+  color: rgb(226, 22, 22);
+}
+h2 {
+  color: rgb(128, 0, 0);
+}
+h3 {
+  color: rgb(128, 0, 0);
+}
+button {
+  color:rgb(0, 98, 26);
+  width: 150px;
+  height: 75px;
+}
+background {
+background-color: green;
+}
+

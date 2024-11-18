@@ -25,3 +25,10 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); /* Add a shadow effect on hover */
   transform: translateY(-2px); /* Slight lift effect on hover */
 }
+body {
+  background-image: url('colorkit.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Optional: keeps the image fixed while scrolling */
+}

@@ -3,9 +3,19 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="dbysagames.png" type="png">
   <h1>WASD Games</h1>
-   <a href="1v1.lol.html" class="custom-button">1v1.lol</a>
+  <p>Please wait 5 seconds for games to show up.</p>
+  <div id="container">
+    <a href="1v1.lol.html" class="custom-button">1v1.lol</a>
  <a href="Snowrider 3d.html" class="custom-button">Snowrider 3d</a>
     <a href="eaglercraft.1.8.8.html" class="custom-button">EaglerCraft</a>
     <a href="polytrack.html" class="custom-button">PolyTrack</a>
+  </div>
 
+<script>
+  var content = document.getElementById("container");
+  content.style.display="none";
+  setTimeout(function(){
+    content.style.display="block";
+  }, 5000);
+</script>
   

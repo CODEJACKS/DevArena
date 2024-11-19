@@ -1,19 +1,45 @@
-<!docype html>
-<html lang= en>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="dbysagames.png" type="png">
   <title>Sports</title>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="cat1.html">Adventure</a></li>
+      <li><a href="cat2.html">Clicking/Button</a></li>
+      <li><a href="cat3.html">Shooting</a></li>
+      <li><a href="cat4.html">WASD</a></li>
+      <li><a href="cat5.html">Sports</a></li>
+      <li><a href="form.html">Suggestion Form</a></li>
+      <li><a href="about-us.md">About Us</a></li>
+    </ul>
+  </nav>
   <h1>Sports Games</h1>
-   <p>Please wait 5 seconds for games to show up.</p>
+  <p>Please wait for the games to load.</p>
   <h3>While you are waiting, Please remember to recommend us to your friends!</h3>
   <div id="container">
     <a href="retrobowl.html" class="custom-button">RetroBowl</a>
     <a href="basketrandom.html" class="custom-button">Basket Random</a>
   </div>
 
-<script>
-  var content = document.getElementById("container");
-  content.style.display="none";
-  setTimeout(function(){
-    content.style.display="block";
-  }, 5000);
-</script>
+  <div id="loading-spinner" class="spinner"></div>
+
+  <script>
+    var content = document.getElementById("container");
+    var spinner = document.getElementById("loading-spinner");
+    content.style.display = "none";
+    spinner.style.display = "block";
+
+    setTimeout(function() {
+      content.style.display = "block";
+      spinner.style.display = "none";
+    }, 5000);
+  </script>
+</body>
+</html>

@@ -3,6 +3,17 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="dbysagames.png" type="png">
   <h1>Clicking/Button Games</h1>
-  <a href="cookie-clicker.html" class="custom-button">Cookie-Clicker</a>
+  <p>Please wait 5 seconds for games to show up.</p>
+  <div id="container">
+    <a href="cookie-clicker.html" class="custom-button">Cookie-Clicker</a>
   <a href="geometrydash.html.html" class="custom-button">Geometry Dash</a>
   <a href="gunspin.html" class="custom-button">GunSpin</a>
+  </div>
+
+<script>
+  var content = document.getElementById("container");
+  content.style.display="none";
+  setTimeout(function(){
+    content.style.display="block";
+  }, 5000);
+</script>

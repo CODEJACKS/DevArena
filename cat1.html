@@ -3,5 +3,13 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="dbysagames.png" type="png">
   <h1>Adventure Games</h1>
-  <a href="eaglercraft.1.8.8.html" class="custom-button">EaglerCraft</a>
+  <div id="container"><a href="eaglercraft.1.8.8.html" class="custom-button">EaglerCraft</a></div>
+
+<script>
+  var content = document.getElementById("container");
+  content.style.display="none";
+  setTimeout(function(){
+    content.style.display="block";
+  }, 5000);
+</script>
   </html>

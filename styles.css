@@ -167,3 +167,116 @@ nav ul li a:hover {
 #loginForm button:hover {
   background-color: #45a049;
 }
+
+/* P2af6 */
+#video-player {
+  margin: 20px 0;
+}
+
+#video-player video {
+  width: 100%;
+  max-width: 800px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+}
+
+/* P913a */
+#user-accounts {
+  margin: 20px 0;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+#user-accounts h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+#user-accounts p {
+  font-size: 16px;
+}
+
+/* P7a80 */
+#comments {
+  margin: 20px 0;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+#comments h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+#comments p {
+  font-size: 16px;
+}
+
+/* P5e02 */
+#recommendations {
+  margin: 20px 0;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+#recommendations h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+#recommendations p {
+  font-size: 16px;
+}
+
+/* Pee62 */
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+nav.dark-mode {
+  background-color: #1e1e1e;
+}
+
+.custom-button.dark-mode {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.custom-button.dark-mode:hover {
+  background-color: #555555;
+}
+
+#postForm.dark-mode,
+#loginForm.dark-mode,
+#user-accounts.dark-mode,
+#comments.dark-mode,
+#recommendations.dark-mode {
+  background-color: #1e1e1e;
+  border-color: #333333;
+}
+
+#postForm.dark-mode input,
+#postForm.dark-mode textarea,
+#loginForm.dark-mode input {
+  background-color: #333333;
+  color: #ffffff;
+  border-color: #555555;
+}
+
+#postForm.dark-mode button,
+#loginForm.dark-mode button {
+  background-color: #555555;
+  color: #ffffff;
+}
+
+#postForm.dark-mode button:hover,
+#loginForm.dark-mode button:hover {
+  background-color: #777777;
+}

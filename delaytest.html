@@ -1,0 +1,9 @@
+<div id="container">Will display after 5 seconds</div>
+
+<script>
+  var content = document.getElementById("container");
+  content.style.display="none";
+  setTimeout(function(){
+    content.style.display="block";
+  }, 5000);
+</script>

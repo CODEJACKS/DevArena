@@ -2,5 +2,16 @@
 <html lang= en>
   <link rel="stylesheet" href="styles.css">
   <h1>Sports Games</h1>
-   <a href="retrobowl.html" class="custom-button">RetroBowl</a>
+   <p>Please wait 5 seconds for games to show up.</p>
+  <div id="container">
+    <a href="retrobowl.html" class="custom-button">RetroBowl</a>
     <a href="basketrandom.html" class="custom-button">Basket Random</a>
+  </div>
+
+<script>
+  var content = document.getElementById("container");
+  content.style.display="none";
+  setTimeout(function(){
+    content.style.display="block";
+  }, 5000);
+</script>

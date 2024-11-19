@@ -25,12 +25,18 @@
   <h3>While you are waiting, Please remember to recommend us to your friends!</h3>
   <div id="container"><a href="eaglercraft.1.8.8.html" class="custom-button">EaglerCraft</a></div>
 
-<script>
-  var content = document.getElementById("container");
-  content.style.display="none";
-  setTimeout(function(){
-    content.style.display="block";
-  }, 5000);
-</script>
+<div id="loading-spinner" class="spinner"></div>
+
+  <script>
+    var content = document.getElementById("container");
+    var spinner = document.getElementById("loading-spinner");
+    content.style.display = "none";
+    spinner.style.display = "block";
+
+    setTimeout(function() {
+      content.style.display = "block";
+      spinner.style.display = "none";
+    }, 5000);
+  </script>
 </body>
 </html>

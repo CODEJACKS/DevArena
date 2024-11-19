@@ -75,3 +75,59 @@ nav ul li a:hover {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
+/* Forum page styles */
+#postForm {
+  margin-bottom: 20px;
+}
+
+#postForm label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+#postForm input,
+#postForm textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#postForm button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#postForm button:hover {
+  background-color: #45a049;
+}
+
+#posts {
+  margin-top: 20px;
+}
+
+#postList {
+  list-style-type: none;
+  padding: 0;
+}
+
+#postList .post {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+#postList .post .username {
+  font-weight: bold;
+}
+
+#postList .post .content {
+  margin-top: 5px;
+}

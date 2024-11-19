@@ -19,3 +19,26 @@ function loadContentWithSpinner(contentId, delay) {
     hideLoadingSpinner(spinner);
   }, delay);
 }
+
+document.getElementById("postForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+  var username = document.getElementById("username").value;
+  var postContent = document.getElementById("postContent").value;
+  addPost(username, postContent);
+  document.getElementById("postForm").reset();
+});
+
+function addPost(username, content) {
+  var postList = document.getElementById("postList");
+  var post = document.createElement("div");
+  post.className = "post";
+  var postUsername = document.createElement("div");
+  postUsername.className = "username";
+  postUsername.textContent = username;
+  var postContent = document.createElement("div");
+  postContent.className = "content";
+  postContent.textContent = content;
+  post.appendChild(postUsername);
+  post.appendChild(postContent);
+  postList.appendChild(post);
+}

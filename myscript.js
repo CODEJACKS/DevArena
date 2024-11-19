@@ -42,3 +42,22 @@ function addPost(username, content) {
   post.appendChild(postContent);
   postList.appendChild(post);
 }
+
+function authenticateUser(username, password) {
+  if (username === "admin" && password === "password") {
+    localStorage.setItem("authenticated", "true");
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function checkAuthentication() {
+  return localStorage.getItem("authenticated") === "true";
+}
+
+function redirectToLogin() {
+  if (!checkAuthentication()) {
+    window.location.href = "login.html";
+  }
+}

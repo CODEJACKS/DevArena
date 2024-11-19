@@ -44,7 +44,7 @@ function addPost(username, content) {
 }
 
 function authenticateUser(username, password) {
-  if (username === "admin" && password === "adminpassword") {
+  if (username === "admin" && password === "password") {
     localStorage.setItem("authenticated", "true");
     return true;
   } else {

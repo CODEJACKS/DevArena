@@ -40,6 +40,7 @@ nav {
   position: sticky;
   top: 0;
   z-index: 1000;
+  height: 50px; /* Make the navigation bar smaller */
 }
 
 nav ul {
@@ -56,7 +57,7 @@ nav ul li a {
   display: block;
   color: white;
   text-align: center;
-  padding: 14px 16px;
+  padding: 10px 12px; /* Adjust padding to make the navigation bar smaller */
   text-decoration: none;
 }
 
@@ -208,7 +209,7 @@ nav ul li ul li a:hover {
 #searchBar {
   background-color: #333;
   color: white;
-  padding: 10px;
+  padding: 5px; /* Make the search bar smaller */
   border-radius: 5px;
   border: none;
   margin-left: auto;
@@ -298,4 +299,18 @@ datalist {
 
 #backToTopButton:hover {
   background-color: #45a049;
+}
+
+/* P8fad */
+#searchButton {
+  background-color: #4CAF50; /* Green background */
+  color: white;
+  padding: 5px 10px; /* Make the search button smaller */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#searchButton:hover {
+  background-color: #45a049; /* Darker green on hover */
 }

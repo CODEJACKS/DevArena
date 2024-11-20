@@ -140,19 +140,43 @@ function displayRecentSearches() {
   });
 }
 
-document.getElementById("categoryFilters").addEventListener("change", function() {
-  var selectedCategories = Array.from(document.querySelectorAll("#categoryFilters input:checked")).map(function(checkbox) {
-    return checkbox.value.toLowerCase();
-  });
+document.getElementById("searchButton").addEventListener("click", function() {
+  var query = document.getElementById("searchBar").value.toLowerCase();
   var links = document.querySelectorAll("nav ul li a");
   links.forEach(function(link) {
     var text = link.textContent.toLowerCase();
-    if (selectedCategories.length === 0 || selectedCategories.some(function(category) {
-      return text.includes(category);
-    })) {
+    if (text.includes(query)) {
       link.style.display = "block";
     } else {
       link.style.display = "none";
     }
   });
 });
+
+function displayRecentSearches() {
+  var recentSearches = JSON.parse(localStorage.getItem("recentSearches")) || [];
+  var recentSearchList = document.getElementById("recentSearchList");
+  recentSearchList.innerHTML = "";
+  recentSearches.forEach(function(search) {
+    var li = document.createElement("li");
+    li.textContent = search;
+    li.addEventListener("click", function() {
+      document.getElementById("searchBar").value = search;
+      document.getElementById("searchBar").dispatchEvent(new Event("input"));
+    });
+    recentSearchList.appendChild(li);
+  });
+  var dropdown = document.createElement("div");
+  dropdown.className = "dropdown";
+  recentSearches.forEach(function(search) {
+    var option = document.createElement("div");
+    option.className = "dropdown-option";
+    option.textContent = search;
+    option.addEventListener("click", function() {
+      document.getElementById("searchBar").value = search;
+      document.getElementById("searchBar").dispatchEvent(new Event("input"));
+    });
+    dropdown.appendChild(option);
+  });
+  recentSearchList.appendChild(dropdown);
+}

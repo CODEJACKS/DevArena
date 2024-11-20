@@ -83,3 +83,17 @@ function promptPWAInstall() {
 }
 
 document.getElementById('installButton').addEventListener('click', promptPWAInstall);
+
+// P6b95
+document.getElementById("searchBar").addEventListener("input", function(event) {
+  var query = event.target.value.toLowerCase();
+  var links = document.querySelectorAll("nav ul li a");
+  links.forEach(function(link) {
+    var text = link.textContent.toLowerCase();
+    if (text.includes(query)) {
+      link.style.display = "block";
+    } else {
+      link.style.display = "none";
+    }
+  });
+});

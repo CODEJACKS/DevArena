@@ -23,6 +23,26 @@
       });
     }
   </script>
+  <script>
+    let deferredPrompt;
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      document.getElementById('installButton').style.display = 'block';
+    });
+
+    function promptPWAInstall() {
+      deferredPrompt.prompt();
+      deferredPrompt.userChoice.then((choiceResult) => {
+        if (choiceResult.outcome === 'accepted') {
+          console.log('User accepted the A2HS prompt');
+        } else {
+          console.log('User dismissed the A2HS prompt');
+        }
+        deferredPrompt = null;
+      });
+    }
+  </script>
 </head>
 <body>
   <nav>
@@ -50,6 +70,7 @@
   <p>Thanks for visiting!</p>
   <a href="form.html" class="custom-button">Suggestion form</a>
   <a href="about-us.html" class="custom-button">About Us</a>
+  <button id="installButton" style="display:none;" onclick="promptPWAInstall()">Install DevArena</button>
   <img src="dbysagames.png" class="corner-image">
 </body>
 </html>

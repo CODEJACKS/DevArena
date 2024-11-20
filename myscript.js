@@ -84,99 +84,26 @@ function promptPWAInstall() {
 
 document.getElementById('installButton').addEventListener('click', promptPWAInstall);
 
-document.getElementById("searchBar").addEventListener("input", function(event) {
-  var query = event.target.value.toLowerCase();
-  var links = document.querySelectorAll("nav ul li a");
-  links.forEach(function(link) {
-    var text = link.textContent.toLowerCase();
+function filterCategories(query) {
+  var categories = document.querySelectorAll("nav ul li a");
+  categories.forEach(function(category) {
+    var text = category.textContent.toLowerCase();
     if (text.includes(query)) {
-      link.style.display = "block";
+      category.style.display = "block";
     } else {
-      link.style.display = "none";
+      category.style.display = "none";
     }
-  });
-});
-
-document.getElementById("searchBar").addEventListener("input", function(event) {
-  var query = event.target.value.toLowerCase();
-  var suggestions = document.getElementById("suggestions").options;
-  var dropdown = document.getElementById("suggestions");
-  dropdown.innerHTML = "";
-  for (var i = 0; i < suggestions.length; i++) {
-    var suggestion = suggestions[i].value.toLowerCase();
-    if (suggestion.includes(query)) {
-      var option = document.createElement("option");
-      option.value = suggestions[i].value;
-      dropdown.appendChild(option);
-    }
-  }
-});
-
-document.getElementById("searchBar").addEventListener("input", function(event) {
-  var query = event.target.value.toLowerCase();
-  var recentSearches = JSON.parse(localStorage.getItem("recentSearches")) || [];
-  if (query && !recentSearches.includes(query)) {
-    recentSearches.push(query);
-    if (recentSearches.length > 5) {
-      recentSearches.shift();
-    }
-    localStorage.setItem("recentSearches", JSON.stringify(recentSearches));
-  }
-  displayRecentSearches();
-});
-
-function displayRecentSearches() {
-  var recentSearches = JSON.parse(localStorage.getItem("recentSearches")) || [];
-  var recentSearchList = document.getElementById("recentSearchList");
-  recentSearchList.innerHTML = "";
-  recentSearches.forEach(function(search) {
-    var li = document.createElement("li");
-    li.textContent = search;
-    li.addEventListener("click", function() {
-      document.getElementById("searchBar").value = search;
-      document.getElementById("searchBar").dispatchEvent(new Event("input"));
-    });
-    recentSearchList.appendChild(li);
   });
 }
 
-document.getElementById("searchButton").addEventListener("click", function() {
-  var query = document.getElementById("searchBar").value.toLowerCase();
-  var links = document.querySelectorAll("nav ul li a");
-  links.forEach(function(link) {
-    var text = link.textContent.toLowerCase();
-    if (text.includes(query)) {
-      link.style.display = "block";
-    } else {
-      link.style.display = "none";
-    }
+function displayRecommendedGames() {
+  var recommendedGames = ["EaglerCraft", "Cookie-Clicker", "1v1.lol"];
+  var container = document.getElementById("recommendedGames");
+  container.innerHTML = "";
+  recommendedGames.forEach(function(game) {
+    var gameElement = document.createElement("div");
+    gameElement.className = "recommended-game";
+    gameElement.textContent = game;
+    container.appendChild(gameElement);
   });
-});
-
-function displayRecentSearches() {
-  var recentSearches = JSON.parse(localStorage.getItem("recentSearches")) || [];
-  var recentSearchList = document.getElementById("recentSearchList");
-  recentSearchList.innerHTML = "";
-  recentSearches.forEach(function(search) {
-    var li = document.createElement("li");
-    li.textContent = search;
-    li.addEventListener("click", function() {
-      document.getElementById("searchBar").value = search;
-      document.getElementById("searchBar").dispatchEvent(new Event("input"));
-    });
-    recentSearchList.appendChild(li);
-  });
-  var dropdown = document.createElement("div");
-  dropdown.className = "dropdown";
-  recentSearches.forEach(function(search) {
-    var option = document.createElement("div");
-    option.className = "dropdown-option";
-    option.textContent = search;
-    option.addEventListener("click", function() {
-      document.getElementById("searchBar").value = search;
-      document.getElementById("searchBar").dispatchEvent(new Event("input"));
-    });
-    dropdown.appendChild(option);
-  });
-  recentSearchList.appendChild(dropdown);
 }

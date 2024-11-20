@@ -39,3 +39,26 @@
 
 ### Additional Information
 - No known issues in this release.
+
+## [3.4.3.3] - 2023-10-15
+### New Features and Improvements
+- Removed the search bar feature from all HTML files.
+- Repurposed the search bar related JavaScript code to handle filtering categories and displaying recommended games.
+
+### Bug Fixes
+- None.
+
+### Breaking Changes
+- None.
+
+### File Updates
+- Updated `about-us.html` to remove the search bar and recent searches section.
+- Updated `cat1.html` to remove the search bar and recent searches section.
+- Updated `cat2.html` to remove the search bar and recent searches section.
+- Updated `cat3.html` to remove the search bar and recent searches section.
+- Updated `cat4.html` to remove the search bar and recent searches section.
+- Updated `cat5.html` to remove the search bar and recent searches section.
+- Updated `cat6.html` to remove the search bar and recent searches section.
+- Updated `forum.html` to remove the search bar.
+- Updated `index.html` to remove the search bar and recent searches section.
+- Updated `myscript.js` to repurpose the search bar related JavaScript code.

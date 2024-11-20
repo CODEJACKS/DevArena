@@ -84,13 +84,72 @@ function promptPWAInstall() {
 
 document.getElementById('installButton').addEventListener('click', promptPWAInstall);
 
-// P6b95
 document.getElementById("searchBar").addEventListener("input", function(event) {
   var query = event.target.value.toLowerCase();
   var links = document.querySelectorAll("nav ul li a");
   links.forEach(function(link) {
     var text = link.textContent.toLowerCase();
     if (text.includes(query)) {
+      link.style.display = "block";
+    } else {
+      link.style.display = "none";
+    }
+  });
+});
+
+document.getElementById("searchBar").addEventListener("input", function(event) {
+  var query = event.target.value.toLowerCase();
+  var suggestions = document.getElementById("suggestions").options;
+  var dropdown = document.getElementById("suggestions");
+  dropdown.innerHTML = "";
+  for (var i = 0; i < suggestions.length; i++) {
+    var suggestion = suggestions[i].value.toLowerCase();
+    if (suggestion.includes(query)) {
+      var option = document.createElement("option");
+      option.value = suggestions[i].value;
+      dropdown.appendChild(option);
+    }
+  }
+});
+
+document.getElementById("searchBar").addEventListener("input", function(event) {
+  var query = event.target.value.toLowerCase();
+  var recentSearches = JSON.parse(localStorage.getItem("recentSearches")) || [];
+  if (query && !recentSearches.includes(query)) {
+    recentSearches.push(query);
+    if (recentSearches.length > 5) {
+      recentSearches.shift();
+    }
+    localStorage.setItem("recentSearches", JSON.stringify(recentSearches));
+  }
+  displayRecentSearches();
+});
+
+function displayRecentSearches() {
+  var recentSearches = JSON.parse(localStorage.getItem("recentSearches")) || [];
+  var recentSearchList = document.getElementById("recentSearchList");
+  recentSearchList.innerHTML = "";
+  recentSearches.forEach(function(search) {
+    var li = document.createElement("li");
+    li.textContent = search;
+    li.addEventListener("click", function() {
+      document.getElementById("searchBar").value = search;
+      document.getElementById("searchBar").dispatchEvent(new Event("input"));
+    });
+    recentSearchList.appendChild(li);
+  });
+}
+
+document.getElementById("categoryFilters").addEventListener("change", function() {
+  var selectedCategories = Array.from(document.querySelectorAll("#categoryFilters input:checked")).map(function(checkbox) {
+    return checkbox.value.toLowerCase();
+  });
+  var links = document.querySelectorAll("nav ul li a");
+  links.forEach(function(link) {
+    var text = link.textContent.toLowerCase();
+    if (selectedCategories.length === 0 || selectedCategories.some(function(category) {
+      return text.includes(category);
+    })) {
       link.style.display = "block";
     } else {
       link.style.display = "none";

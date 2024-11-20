@@ -21,7 +21,23 @@
       <li><a href="about-us.html">About Us</a></li>
       <li><a href="forum.html">Forum</a></li>
     </ul>
-    <input type="text" id="searchBar" placeholder="Search...">
+    <input type="text" id="searchBar" placeholder="Search..." list="suggestions">
+    <datalist id="suggestions">
+      <option value="Adventure">
+      <option value="Clicking/Button">
+      <option value="Shooting">
+      <option value="WASD">
+      <option value="Sports">
+      <option value="Multiplayer">
+    </datalist>
+    <div id="categoryFilters">
+      <label><input type="checkbox" value="Adventure"> Adventure</label>
+      <label><input type="checkbox" value="Clicking/Button"> Clicking/Button</label>
+      <label><input type="checkbox" value="Shooting"> Shooting</label>
+      <label><input type="checkbox" value="WASD"> WASD</label>
+      <label><input type="checkbox" value="Sports"> Sports</label>
+      <label><input type="checkbox" value="Multiplayer"> Multiplayer</label>
+    </div>
     <img src="dbysagames.png" class="corner-image">
   </nav>
   <h1>WASD Games</h1>
@@ -47,5 +63,9 @@
       spinner.style.display = "none";
     }, 5000);
   </script>
+  <div id="recentSearches">
+    <h3>Recent Searches</h3>
+    <ul id="recentSearchList"></ul>
+  </div>
 </body>
 </html>

@@ -43,13 +43,33 @@ function addPost(username, content) {
   postList.appendChild(post);
 }
 
-function authenticateUser(username, password) {
-  if (username === "admin" && password === "password") {
+function sendLoginCredentials(username, password) {
+  return fetch('/login', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ username: username, password: password })
+  })
+  .then(response => response.json());
+}
+
+function handleServerResponse(data) {
+  if (data.success) {
     localStorage.setItem("authenticated", "true");
-    return true;
+    window.location.href = "index.html";
   } else {
-    return false;
+    alert("Invalid username or password");
   }
+}
+
+function authenticateUser(username, password) {
+  return sendLoginCredentials(username, password)
+    .then(data => handleServerResponse(data))
+    .catch(error => {
+      console.error('Error:', error);
+      alert("An error occurred. Please try again later.");
+    });
 }
 
 function checkAuthentication() {
@@ -108,7 +128,6 @@ function displayRecommendedGames() {
   });
 }
 
-// P473e
 document.getElementById("reviewForm").addEventListener("submit", function(event) {
   event.preventDefault();
   var username = document.getElementById("reviewUsername").value;
@@ -137,7 +156,6 @@ function addReview(username, content, rating) {
   reviewsList.appendChild(review);
 }
 
-// P3f0f
 function displayAchievements(achievements) {
   var achievementsList = document.getElementById("achievementsList");
   achievementsList.innerHTML = "";
@@ -160,7 +178,6 @@ function displayLeaderboards(leaderboards) {
   });
 }
 
-// Pe5a4
 function displayCommunityEvents(events) {
   var eventsList = document.getElementById("eventsList");
   eventsList.innerHTML = "";

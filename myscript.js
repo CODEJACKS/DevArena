@@ -43,45 +43,6 @@ function addPost(username, content) {
   postList.appendChild(post);
 }
 
-function sendLoginCredentials(username, password) {
-  return fetch('/login', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({ username: username, password: password })
-  })
-  .then(response => response.json());
-}
-
-function handleServerResponse(data) {
-  if (data.success) {
-    localStorage.setItem("authenticated", "true");
-    window.location.href = "index.html";
-  } else {
-    alert("Invalid username or password");
-  }
-}
-
-function authenticateUser(username, password) {
-  return sendLoginCredentials(username, password)
-    .then(data => handleServerResponse(data))
-    .catch(error => {
-      console.error('Error:', error);
-      alert("An error occurred. Please try again later.");
-    });
-}
-
-function checkAuthentication() {
-  return localStorage.getItem("authenticated") === "true";
-}
-
-function redirectToLogin() {
-  if (!checkAuthentication()) {
-    window.location.href = "login.html";
-  }
-}
-
 let deferredPrompt;
 
 window.addEventListener('beforeinstallprompt', (e) => {

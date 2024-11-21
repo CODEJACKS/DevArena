@@ -28,18 +28,32 @@
   <h3>While you are waiting, Please remember to recommend us to your friends!</h3>
   <div id="container"><a href="games/eaglercraft.1.8.8.html" class="custom-button">EaglerCraft</a></div>
 
-<div id="loading-spinner" class="spinner"></div>
+  <div id="loading-spinner" class="spinner"></div>
+  <div id="loading-progress" class="progress-bar">
+    <div id="loading-progress-bar" class="progress-bar-fill"></div>
+  </div>
 
   <script>
     var content = document.getElementById("container");
     var spinner = document.getElementById("loading-spinner");
+    var progressBar = document.getElementById("loading-progress");
+    var progressBarFill = document.getElementById("loading-progress-bar");
+
     content.style.display = "none";
     spinner.style.display = "block";
+    progressBar.style.display = "block";
 
-    setTimeout(function() {
-      content.style.display = "block";
-      spinner.style.display = "none";
-    }, 5000);
+    var progress = 0;
+    var interval = setInterval(function() {
+      progress += 1;
+      progressBarFill.style.width = progress + "%";
+      if (progress >= 100) {
+        clearInterval(interval);
+        content.style.display = "block";
+        spinner.style.display = "none";
+        progressBar.style.display = "none";
+      }
+    }, 50);
   </script>
 </body>
 </html>

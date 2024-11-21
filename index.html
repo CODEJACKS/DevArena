@@ -72,5 +72,43 @@
   <a href="about-us.html" class="custom-button">About Us</a>
   <button id="installButton" style="display:none;" onclick="promptPWAInstall()">Install DevArena</button>
   <img src="dbysagames.png" class="corner-image">
+
+  <section id="user-reviews">
+    <h2>User Reviews and Ratings</h2>
+    <form id="reviewForm">
+      <label for="reviewUsername">Username:</label>
+      <input type="text" id="reviewUsername" name="reviewUsername" required>
+      <label for="reviewContent">Review:</label>
+      <textarea id="reviewContent" name="reviewContent" required></textarea>
+      <label for="reviewRating">Rating:</label>
+      <select id="reviewRating" name="reviewRating" required>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+      <button type="submit">Submit Review</button>
+    </form>
+    <div id="reviewsList"></div>
+  </section>
+
+  <section id="achievements-leaderboards">
+    <h2>Achievements and Leaderboards</h2>
+    <div id="achievements">
+      <h3>Achievements</h3>
+      <ul id="achievementsList"></ul>
+    </div>
+    <div id="leaderboards">
+      <h3>Leaderboards</h3>
+      <ul id="leaderboardsList"></ul>
+    </div>
+  </section>
+
+  <section id="community-events">
+    <h2>Community Events and Challenges</h2>
+    <div id="eventsList"></div>
+  </section>
+
 </body>
 </html>

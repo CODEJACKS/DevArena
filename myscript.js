@@ -107,3 +107,67 @@ function displayRecommendedGames() {
     container.appendChild(gameElement);
   });
 }
+
+// P473e
+document.getElementById("reviewForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+  var username = document.getElementById("reviewUsername").value;
+  var reviewContent = document.getElementById("reviewContent").value;
+  var reviewRating = document.getElementById("reviewRating").value;
+  addReview(username, reviewContent, reviewRating);
+  document.getElementById("reviewForm").reset();
+});
+
+function addReview(username, content, rating) {
+  var reviewsList = document.getElementById("reviewsList");
+  var review = document.createElement("div");
+  review.className = "review";
+  var reviewUsername = document.createElement("div");
+  reviewUsername.className = "username";
+  reviewUsername.textContent = username;
+  var reviewContent = document.createElement("div");
+  reviewContent.className = "content";
+  reviewContent.textContent = content;
+  var reviewRating = document.createElement("div");
+  reviewRating.className = "rating";
+  reviewRating.textContent = "Rating: " + rating;
+  review.appendChild(reviewUsername);
+  review.appendChild(reviewContent);
+  review.appendChild(reviewRating);
+  reviewsList.appendChild(review);
+}
+
+// P3f0f
+function displayAchievements(achievements) {
+  var achievementsList = document.getElementById("achievementsList");
+  achievementsList.innerHTML = "";
+  achievements.forEach(function(achievement) {
+    var achievementElement = document.createElement("li");
+    achievementElement.className = "achievement";
+    achievementElement.textContent = achievement;
+    achievementsList.appendChild(achievementElement);
+  });
+}
+
+function displayLeaderboards(leaderboards) {
+  var leaderboardsList = document.getElementById("leaderboardsList");
+  leaderboardsList.innerHTML = "";
+  leaderboards.forEach(function(leaderboard) {
+    var leaderboardElement = document.createElement("li");
+    leaderboardElement.className = "leaderboard";
+    leaderboardElement.textContent = leaderboard;
+    leaderboardsList.appendChild(leaderboardElement);
+  });
+}
+
+// Pe5a4
+function displayCommunityEvents(events) {
+  var eventsList = document.getElementById("eventsList");
+  eventsList.innerHTML = "";
+  events.forEach(function(event) {
+    var eventElement = document.createElement("div");
+    eventElement.className = "event";
+    eventElement.textContent = event;
+    eventsList.appendChild(eventElement);
+  });
+}

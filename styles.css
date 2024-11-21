@@ -314,3 +314,125 @@ datalist {
 #searchButton:hover {
   background-color: #45a049; /* Darker green on hover */
 }
+
+/* Pd824 */
+#user-reviews {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+}
+
+#user-reviews h2 {
+  margin-bottom: 10px;
+}
+
+#user-reviews form {
+  margin-bottom: 20px;
+}
+
+#user-reviews label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+#user-reviews input,
+#user-reviews textarea,
+#user-reviews select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#user-reviews button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#user-reviews button:hover {
+  background-color: #45a049;
+}
+
+#reviewsList {
+  list-style-type: none;
+  padding: 0;
+}
+
+#reviewsList .review {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+#reviewsList .review .username {
+  font-weight: bold;
+}
+
+#reviewsList .review .content {
+  margin-top: 5px;
+}
+
+#reviewsList .review .rating {
+  margin-top: 5px;
+}
+
+/* Pc7fb */
+#achievements-leaderboards {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+}
+
+#achievements-leaderboards h2 {
+  margin-bottom: 10px;
+}
+
+#achievements-leaderboards h3 {
+  margin-bottom: 10px;
+}
+
+#achievementsList,
+#leaderboardsList {
+  list-style-type: none;
+  padding: 0;
+}
+
+#achievementsList .achievement,
+#leaderboardsList .leaderboard {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+/* P3ecd */
+#community-events {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+}
+
+#community-events h2 {
+  margin-bottom: 10px;
+}
+
+#eventsList {
+  list-style-type: none;
+  padding: 0;
+}
+
+#eventsList .event {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}

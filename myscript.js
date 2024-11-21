@@ -165,3 +165,18 @@ function removeLoginReferences() {
 document.addEventListener("DOMContentLoaded", function() {
   removeLoginReferences();
 });
+
+function animateProgressBar(progressBarFill, duration) {
+  var startTime = null;
+
+  function animate(timestamp) {
+    if (!startTime) startTime = timestamp;
+    var progress = Math.min((timestamp - startTime) / duration, 1);
+    progressBarFill.style.width = (progress * 100) + "%";
+    if (progress < 1) {
+      requestAnimationFrame(animate);
+    }
+  }
+
+  requestAnimationFrame(animate);
+}

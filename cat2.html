@@ -32,32 +32,32 @@
     <a href="games/gunspin.html" class="custom-button">GunSpin</a>
   </div>
 
-  <div id="loading-spinner" class="spinner"></div>
   <div id="loading-progress" class="progress-bar">
     <div id="loading-progress-bar" class="progress-bar-fill"></div>
   </div>
 
   <script>
     var content = document.getElementById("container");
-    var spinner = document.getElementById("loading-spinner");
     var progressBar = document.getElementById("loading-progress");
     var progressBarFill = document.getElementById("loading-progress-bar");
 
     content.style.display = "none";
-    spinner.style.display = "block";
     progressBar.style.display = "block";
 
     var progress = 0;
-    var interval = setInterval(function() {
+
+    function updateProgressBar() {
       progress += 1;
       progressBarFill.style.width = progress + "%";
-      if (progress >= 100) {
-        clearInterval(interval);
+      if (progress < 100) {
+        requestAnimationFrame(updateProgressBar);
+      } else {
         content.style.display = "block";
-        spinner.style.display = "none";
         progressBar.style.display = "none";
       }
-    }, 50);
+    }
+
+    requestAnimationFrame(updateProgressBar);
   </script>
 </body>
 </html>

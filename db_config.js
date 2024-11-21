@@ -1,10 +1,10 @@
 const mysql = require('mysql');
 
 const dbConfig = {
-  host: 'localhost',
-  user: 'root',
-  password: 'password',
-  database: 'devarena'
+  host: 'sql5.freesqldatabase.com',
+  user: 'sql5746405',
+  password: 'evfa1cb7Jp',
+  database: 'sql5746405'
 };
 
 const connection = mysql.createConnection(dbConfig);

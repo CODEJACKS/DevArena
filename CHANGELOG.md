@@ -62,3 +62,18 @@
 - Updated `forum.html` to remove the search bar.
 - Updated `index.html` to remove the search bar and recent searches section.
 - Updated `myscript.js` to repurpose the search bar related JavaScript code.
+
+## [3.4.3.4] - 2023-10-20
+### New Features and Improvements
+- Added a visible loading bar to `index.html`.
+- Ensured the loading bar is responsive using relative units, media queries, and viewport units in `styles.css`.
+
+### Bug Fixes
+- None.
+
+### Breaking Changes
+- None.
+
+### File Updates
+- Updated `index.html` to include the loading bar.
+- Updated `styles.css` to ensure the loading bar is responsive.

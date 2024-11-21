@@ -52,7 +52,16 @@
         requestAnimationFrame(updateProgressBar);
       } else {
         content.style.display = "block";
+        var buttons = content.getElementsByClassName("custom-button");
+        for (var i = 0; i < buttons.length; i++) {
+          buttons[i].style.display = "block";
+        }
       }
+    }
+
+    var buttons = content.getElementsByClassName("custom-button");
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].style.display = "none";
     }
 
     requestAnimationFrame(updateProgressBar);

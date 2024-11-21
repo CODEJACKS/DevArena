@@ -27,13 +27,23 @@ app.get('/recent-chats', (req, res) => {
 wss.on('connection', (ws) => {
   console.log('New client connected');
 
+  chatHistory.forEach(chat => {
+    ws.send(JSON.stringify(chat));
+  });
+
   ws.on('message', (message) => {
     console.log(`Received message: ${message}`);
-    const filteredMessage = filterMessage(message);
-    chatHistory.push(filteredMessage);
+    const parsedMessage = JSON.parse(message);
+    const filteredMessage = filterMessage(parsedMessage.content);
+    const chatMessage = {
+      username: parsedMessage.username,
+      content: filteredMessage,
+      timestamp: parsedMessage.timestamp
+    };
+    chatHistory.push(chatMessage);
     wss.clients.forEach((client) => {
       if (client !== ws && client.readyState === WebSocket.OPEN) {
-        client.send(filteredMessage);
+        client.send(JSON.stringify(chatMessage));
       }
     });
   });

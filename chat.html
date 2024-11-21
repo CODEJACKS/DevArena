@@ -29,7 +29,7 @@
     <div id="recentChatsList"></div>
   </div>
   <div id="chatWindow"></div>
-  <form id="chatForm">
+  <form id="chatForm" onsubmit="handleChatFormSubmit(event)">
     <input type="text" id="chatInput" placeholder="Type your message here..." required>
     <button type="submit">Send</button>
     <button type="button" id="emojiButton">😊</button>

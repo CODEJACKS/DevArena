@@ -258,3 +258,13 @@ socket.addEventListener('message', function(event) {
     typingIndicator.style.display = 'none';
   }
 });
+
+// New function to handle chat form submission
+function handleChatFormSubmit(event) {
+  event.preventDefault();
+  const chatInput = document.getElementById('chatInput');
+  const message = chatInput.value;
+  const timestamp = new Date().toLocaleTimeString();
+  socket.send(JSON.stringify({ username: 'Player', content: message, timestamp: timestamp }));
+  chatInput.value = '';
+}

@@ -186,28 +186,42 @@ const socket = new WebSocket('ws://localhost:3000');
 
 socket.addEventListener('open', function (event) {
   console.log('Connected to WebSocket server');
+  fetchRecentChats();
 });
 
 socket.addEventListener('message', function (event) {
   const message = JSON.parse(event.data);
-  displayMessage(message.username, message.content);
+  displayMessage(message.username, message.content, message.timestamp);
 });
 
 document.getElementById('chatForm').addEventListener('submit', function(event) {
   event.preventDefault();
   const chatInput = document.getElementById('chatInput');
   const message = chatInput.value;
-  socket.send(JSON.stringify({ username: 'Player', content: message }));
+  const timestamp = new Date().toLocaleTimeString();
+  socket.send(JSON.stringify({ username: 'Player', content: message, timestamp: timestamp }));
   chatInput.value = '';
 });
 
-function displayMessage(username, content) {
+function displayMessage(username, content, timestamp) {
   const chatWindow = document.getElementById('chatWindow');
   const messageElement = document.createElement('div');
   messageElement.className = 'message';
-  messageElement.innerHTML = `<strong>${username}:</strong> ${content}`;
+  messageElement.innerHTML = `<strong>${username}:</strong> ${content} <span class="timestamp">${timestamp}</span>`;
   chatWindow.appendChild(messageElement);
   chatWindow.scrollTop = chatWindow.scrollHeight;
+}
+
+function fetchRecentChats() {
+  fetch('/recent-chats')
+    .then(response => response.json())
+    .then(chats => {
+      const recentChatsList = document.getElementById('recentChatsList');
+      recentChatsList.innerHTML = '';
+      chats.forEach(chat => {
+        displayMessage(chat.username, chat.content, chat.timestamp);
+      });
+    });
 }
 
 // Emoji selection and display
@@ -222,4 +236,25 @@ document.querySelectorAll('#emojiMenu span').forEach(function(emoji) {
     chatInput.value += emoji.textContent;
     document.getElementById('emojiMenu').style.display = 'none';
   });
+});
+
+// Typing indicator
+let typingTimeout;
+const typingIndicator = document.getElementById('typingIndicator');
+
+document.getElementById('chatInput').addEventListener('input', function() {
+  clearTimeout(typingTimeout);
+  socket.send(JSON.stringify({ typing: true }));
+  typingTimeout = setTimeout(() => {
+    socket.send(JSON.stringify({ typing: false }));
+  }, 1000);
+});
+
+socket.addEventListener('message', function(event) {
+  const data = JSON.parse(event.data);
+  if (data.typing) {
+    typingIndicator.style.display = 'block';
+  } else {
+    typingIndicator.style.display = 'none';
+  }
 });

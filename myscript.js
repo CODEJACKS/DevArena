@@ -180,3 +180,46 @@ function animateProgressBar(progressBarFill, duration) {
 
   requestAnimationFrame(animate);
 }
+
+// WebSocket connection and real-time chat handling
+const socket = new WebSocket('ws://localhost:3000');
+
+socket.addEventListener('open', function (event) {
+  console.log('Connected to WebSocket server');
+});
+
+socket.addEventListener('message', function (event) {
+  const message = JSON.parse(event.data);
+  displayMessage(message.username, message.content);
+});
+
+document.getElementById('chatForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+  const chatInput = document.getElementById('chatInput');
+  const message = chatInput.value;
+  socket.send(JSON.stringify({ username: 'Player', content: message }));
+  chatInput.value = '';
+});
+
+function displayMessage(username, content) {
+  const chatWindow = document.getElementById('chatWindow');
+  const messageElement = document.createElement('div');
+  messageElement.className = 'message';
+  messageElement.innerHTML = `<strong>${username}:</strong> ${content}`;
+  chatWindow.appendChild(messageElement);
+  chatWindow.scrollTop = chatWindow.scrollHeight;
+}
+
+// Emoji selection and display
+document.getElementById('emojiButton').addEventListener('click', function() {
+  const emojiMenu = document.getElementById('emojiMenu');
+  emojiMenu.style.display = emojiMenu.style.display === 'none' ? 'block' : 'none';
+});
+
+document.querySelectorAll('#emojiMenu span').forEach(function(emoji) {
+  emoji.addEventListener('click', function() {
+    const chatInput = document.getElementById('chatInput');
+    chatInput.value += emoji.textContent;
+    document.getElementById('emojiMenu').style.display = 'none';
+  });
+});

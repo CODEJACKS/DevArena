@@ -145,7 +145,11 @@ function displayCommunityEvents(events) {
   events.forEach(function(event) {
     var eventElement = document.createElement("div");
     eventElement.className = "event";
-    eventElement.textContent = event;
+    eventElement.innerHTML = `
+      <h3><img src="images/game-icon.png" alt="Game Icon"> ${event.title} 🎉</h3>
+      <p>${event.description} 🎲</p>
+      <img src="images/game-controller.png" alt="Game Controller">
+    `;
     eventsList.appendChild(eventElement);
   });
 }

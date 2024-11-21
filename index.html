@@ -38,6 +38,15 @@
       });
     }
   </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var eventDate = new Date("2024-12-01");
+      var currentDate = new Date();
+      if (currentDate > eventDate) {
+        document.getElementById("community-game-night").style.display = "none";
+      }
+    });
+  </script>
 </head>
 <body>
   <nav>
@@ -102,7 +111,13 @@
 
   <section id="community-events">
     <h2>Community Events and Challenges</h2>
-    <div id="eventsList"></div>
+    <div id="eventsList">
+      <div id="community-game-night" class="event">
+        <h3><img src="images/game-icon.png" alt="Game Icon"> Community Game Night 🎉</h3>
+        <p>Join us for a fun-filled community game night! Play your favorite games with fellow DevArena members and make new friends. We'll have a variety of games available, from classic board games to the latest video games. Bring your competitive spirit and get ready for an evening of laughter and excitement. 🎲</p>
+        <img src="images/game-controller.png" alt="Game Controller">
+      </div>
+    </div>
   </section>
 
 </body>

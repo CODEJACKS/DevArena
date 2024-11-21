@@ -435,4 +435,26 @@ datalist {
   padding: 10px;
   margin-bottom: 10px;
   border-radius: 5px;
+  background-color: #e0f7fa; /* Distinct background color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+}
+
+#eventsList .event h3 {
+  font-size: 1.5em; /* Larger font size for the title */
+  font-weight: bold; /* Bold text for the title */
+  color: #00796b; /* Different font color for the title */
+  margin-bottom: 10px; /* Spacing between title and description */
+}
+
+#eventsList .event p {
+  color: #004d40; /* Different font color for the description */
+  margin-bottom: 10px; /* Spacing between description and images */
+}
+
+#eventsList .event img {
+  max-width: 100%; /* Ensure images are responsive */
+  height: auto;
+  display: block;
+  margin: 0 auto; /* Center the images */
+  border-radius: 5px; /* Rounded corners for images */
 }

@@ -149,3 +149,15 @@ function displayCommunityEvents(events) {
     eventsList.appendChild(eventElement);
   });
 }
+
+// Check if any references to login.html exist and remove them
+function removeLoginReferences() {
+  var elements = document.querySelectorAll("a[href='login.html']");
+  elements.forEach(function(element) {
+    element.remove();
+  });
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+  removeLoginReferences();
+});

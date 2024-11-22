@@ -54,5 +54,5 @@ wss.on('connection', (ws) => {
 });
 
 server.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+  console.log(`Server is running on wss://ws.postman-echo.com/raw`);
 });

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="games/dbysagames.png" type="png">
+  <title>Game Suggestion Form</title>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="cat1.html">Adventure</a></li>
+      <li><a href="cat2.html">Clicking/Button</a></li>
+      <li><a href="cat3.html">Shooting</a></li>
+      <li><a href="cat4.html">WASD</a></li>
+      <li><a href="cat5.html">Sports</a></li>
+      <li><a href="cat6.html">Multiplayer</a></li>
+      <li><a href="form.html" class="active">Suggestion Form</a></li>
+      <li><a href="about-us.html">About Us</a></li>
+    </ul>
+  </nav>
+  <h1>Game Suggestion Form</h1>
+  <form id="gameSuggestionForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    
+    <label for="gameSuggestion">Game Suggestion:</label>
+    <input type="text" id="gameSuggestion" name="gameSuggestion" required>
+    
+    <label for="additionalComments">Additional Comments:</label>
+    <textarea id="additionalComments" name="additionalComments"></textarea>
+    
+    <label for="gameCategory">Game Category:</label>
+    <select id="gameCategory" name="gameCategory" required>
+      <option value="adventure">Adventure</option>
+      <option value="clicking">Clicking/Button</option>
+      <option value="shooting">Shooting</option>
+      <option value="wasd">WASD</option>
+      <option value="sports">Sports</option>
+      <option value="multiplayer">Multiplayer</option>
+    </select>
+    
+    <label for="rating">Rating:</label>
+    <select id="rating" name="rating" required>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+    
+    <label for="fileUpload">Upload Screenshot/Media:</label>
+    <input type="file" id="fileUpload" name="fileUpload">
+    
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>

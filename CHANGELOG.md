@@ -105,3 +105,31 @@
 - Updated `myscript.js` to remove JavaScript code related to the chat feature.
 - Updated `server.js` to remove WebSocket server code for the chat feature.
 - Updated `styles.css` to remove CSS styles for the chat and forum features.
+
+## [3.4.3.6] - 2023-11-01
+### New Features and Improvements
+- Added a new file `form.html` for the game suggestion form.
+  - Includes fields for user's name, email, game suggestion, additional comments, game category, rating, and file upload.
+  - Includes a submit button to send suggestions.
+- Updated the navigation bar in `index.html` and all category files to link to the new `form.html`.
+- Updated `myscript.js` to handle form submission, including email notifications, database storage, and automated responses.
+
+### Bug Fixes
+- None.
+
+### Breaking Changes
+- None.
+
+### File Updates
+- Added `form.html` for the game suggestion form.
+- Updated `index.html` to link to the new `form.html`.
+- Updated `cat1.html` to link to the new `form.html`.
+- Updated `cat2.html` to link to the new `form.html`.
+- Updated `cat3.html` to link to the new `form.html`.
+- Updated `cat4.html` to link to the new `form.html`.
+- Updated `cat5.html` to link to the new `form.html`.
+- Updated `cat6.html` to link to the new `form.html`.
+- Updated `myscript.js` to handle form submission, including email notifications, database storage, and automated responses.
+
+### Additional Information
+- No known issues in this release.

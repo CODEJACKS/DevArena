@@ -180,3 +180,58 @@ function animateProgressBar(progressBarFill, duration) {
 
   requestAnimationFrame(animate);
 }
+
+// Function to handle form submission
+document.getElementById("gameSuggestionForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+  
+  var formData = new FormData(event.target);
+  var name = formData.get("name");
+  var email = formData.get("email");
+  var gameSuggestion = formData.get("gameSuggestion");
+  var additionalComments = formData.get("additionalComments");
+  var gameCategory = formData.get("gameCategory");
+  var rating = formData.get("rating");
+  var fileUpload = formData.get("fileUpload");
+
+  // Send email notification to admin
+  sendEmailNotification(name, email, gameSuggestion, additionalComments, gameCategory, rating, fileUpload);
+
+  // Store submission in database
+  storeSubmissionInDatabase(name, email, gameSuggestion, additionalComments, gameCategory, rating, fileUpload);
+
+  // Send automated response to user
+  sendAutomatedResponse(email);
+
+  // Reset the form
+  event.target.reset();
+});
+
+function sendEmailNotification(name, email, gameSuggestion, additionalComments, gameCategory, rating, fileUpload) {
+  // Implement email notification logic here
+  console.log("Email notification sent to admin with the following details:");
+  console.log("Name:", name);
+  console.log("Email:", email);
+  console.log("Game Suggestion:", gameSuggestion);
+  console.log("Additional Comments:", additionalComments);
+  console.log("Game Category:", gameCategory);
+  console.log("Rating:", rating);
+  console.log("File Upload:", fileUpload);
+}
+
+function storeSubmissionInDatabase(name, email, gameSuggestion, additionalComments, gameCategory, rating, fileUpload) {
+  // Implement database storage logic here
+  console.log("Submission stored in database with the following details:");
+  console.log("Name:", name);
+  console.log("Email:", email);
+  console.log("Game Suggestion:", gameSuggestion);
+  console.log("Additional Comments:", additionalComments);
+  console.log("Game Category:", gameCategory);
+  console.log("Rating:", rating);
+  console.log("File Upload:", fileUpload);
+}
+
+function sendAutomatedResponse(email) {
+  // Implement automated response logic here
+  console.log("Automated response sent to:", email);
+}

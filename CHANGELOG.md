@@ -77,3 +77,31 @@
 ### File Updates
 - Updated `index.html` to include the loading bar.
 - Updated `styles.css` to ensure the loading bar is responsive.
+
+## [3.4.3.5] - 2023-10-25
+### New Features and Improvements
+- Removed `forum.html` and `chat.html` from the repository.
+- Removed links to `forum.html` and `chat.html` from the navigation bar in `about-us.html`, `cat1.html`, `cat2.html`, `cat3.html`, `cat4.html`, `cat6.html`, and `index.html`.
+- Removed JavaScript code related to the chat feature from `myscript.js`.
+- Removed WebSocket server code for the chat feature from `server.js`.
+- Removed CSS styles for the chat and forum features from `styles.css`.
+
+### Bug Fixes
+- None.
+
+### Breaking Changes
+- None.
+
+### File Updates
+- Deleted `forum.html`.
+- Deleted `chat.html`.
+- Updated `about-us.html` to remove links to `forum.html` and `chat.html` from the navigation bar.
+- Updated `cat1.html` to remove links to `forum.html` and `chat.html` from the navigation bar.
+- Updated `cat2.html` to remove links to `forum.html` and `chat.html` from the navigation bar.
+- Updated `cat3.html` to remove links to `forum.html` and `chat.html` from the navigation bar.
+- Updated `cat4.html` to remove links to `forum.html` and `chat.html` from the navigation bar.
+- Updated `cat6.html` to remove links to `forum.html` and `chat.html` from the navigation bar.
+- Updated `index.html` to remove links to `forum.html` and `chat.html` from the navigation bar.
+- Updated `myscript.js` to remove JavaScript code related to the chat feature.
+- Updated `server.js` to remove WebSocket server code for the chat feature.
+- Updated `styles.css` to remove CSS styles for the chat and forum features.

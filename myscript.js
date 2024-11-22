@@ -182,7 +182,7 @@ function animateProgressBar(progressBarFill, duration) {
 }
 
 // WebSocket connection and real-time chat handling
-const socket = new WebSocket('ws://localhost:3000');
+const socket = new WebSocket('ws://example.com:3000');
 
 socket.addEventListener('open', function (event) {
   console.log('Connected to WebSocket server');
@@ -194,14 +194,7 @@ socket.addEventListener('message', function (event) {
   displayMessage(message.username, message.content, message.timestamp);
 });
 
-document.getElementById('chatForm').addEventListener('submit', function(event) {
-  event.preventDefault();
-  const chatInput = document.getElementById('chatInput');
-  const message = chatInput.value;
-  const timestamp = new Date().toLocaleTimeString();
-  socket.send(JSON.stringify({ username: 'Player', content: message, timestamp: timestamp }));
-  chatInput.value = '';
-});
+document.getElementById('chatForm').addEventListener('submit', handleChatFormSubmit);
 
 function displayMessage(username, content, timestamp) {
   const chatWindow = document.getElementById('chatWindow');

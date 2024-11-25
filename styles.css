@@ -26,7 +26,7 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
   transform: translateY(-2px); /* Slight lift effect on hover */
 }
 body {
-  background-image: url('colorkit1.png');
+  background-image: url('images/colorkit1.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -457,6 +457,8 @@ datalist {
   display: block;
   margin: 0 auto; /* Center the images */
   border-radius: 5px; /* Rounded corners for images */
+  background-image: url('images/game-icon.png');
+  background-image: url('images/game-controller.png');
 }
 
 /* Pe844 */

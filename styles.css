@@ -57,3 +57,11 @@ body {
   background-color: #555; /* Slight color change on hover */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
 }
+
+/* P31e0 */
+#countdown {
+  font-size: 2em;
+  color: red;
+  text-align: center;
+  margin-top: 20px;
+}

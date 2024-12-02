@@ -15,4 +15,16 @@ document.addEventListener("DOMContentLoaded", function() {
       link.style.boxShadow = "";
     });
   });
+
+  function updateCountdown() {
+    const now = new Date();
+    const currentYear = now.getFullYear();
+    const christmasDate = new Date(currentYear, 11, 25); // December 25th
+    const timeDifference = christmasDate - now;
+    const daysUntilChristmas = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
+    document.getElementById('countdown').innerText = `${daysUntilChristmas} days until Christmas!`;
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 86400000); // Update every 24 hours
 });

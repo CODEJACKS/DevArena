@@ -18,6 +18,7 @@
       <a href="about-us.md">About Us</a>
     </nav>
     <h2>Hello!👋 Welcome to DevArena, A place where you can play games unblocked no ads. FREE!</h2>
+    <div id="countdown"></div>
     <a href="cat1.html" class="custom-button">Adventure</a>
 <a href="cat2.html" class="custom-button">Clicking/Button</a>
 <a href="cat3.html" class="custom-button">Shooting</a>
@@ -26,5 +27,17 @@
 <p>Thanks for visiting!</p>
 <a href="form.html" class="custom-button">Suggestion form</a>
 <a href="about-us.md" class="custom-button">About Us</a>
+    <script>
+      function updateCountdown() {
+        const now = new Date();
+        const currentYear = now.getFullYear();
+        const christmasDate = new Date(currentYear, 11, 25); // December 25th
+        const timeDifference = christmasDate - now;
+        const daysUntilChristmas = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
+        document.getElementById('countdown').innerText = `${daysUntilChristmas} days until Christmas!`;
+      }
+      updateCountdown();
+      setInterval(updateCountdown, 86400000); // Update every 24 hours
+    </script>
   </body>
 </html>

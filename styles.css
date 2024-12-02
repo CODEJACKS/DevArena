@@ -32,3 +32,28 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed; /* Optional: keeps the image fixed while scrolling */
 }
+
+/* Navigation bar styles */
+.navbar {
+  background: linear-gradient(to right, #333, #444); /* Dark color scheme with subtle gradients */
+  font-family: 'Times New Roman', Times, serif; /* Serif font for an elegant touch */
+  position: fixed; /* Fixed at the top */
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  transition: all 0.3s ease; /* Smooth hover effect */
+}
+
+.navbar a:hover {
+  background-color: #555; /* Slight color change on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+}

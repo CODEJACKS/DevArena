@@ -28,24 +28,3 @@ document.addEventListener("DOMContentLoaded", function() {
   updateCountdown();
   setInterval(updateCountdown, 86400000); // Update every 24 hours
 });
-
-function displayFeaturedGame() {
-  const gameUrls = [
-    "https://codejacks.github.io/DevArena/games/eaglercraft.1.8.8.html",
-    "https://codejacks.github.io/DevArena/games/delaford.html",
-    "https://codejacks.github.io/DevArena/games/cookie-clicker.html",
-    "https://codejacks.github.io/DevArena/games/geometrydash.html",
-    "https://codejacks.github.io/DevArena/games/gunspin.html",
-    "https://codejacks.github.io/DevArena/games/1v1.lol.html",
-    "https://codejacks.github.io/DevArena/games/Snowrider 3d.html",
-    "https://codejacks.github.io/DevArena/games/polytrack.html",
-    "https://codejacks.github.io/DevArena/games/retrobowl.html",
-    "https://codejacks.github.io/DevArena/games/basketrandom.html"
-  ];
-
-  const randomIndex = Math.floor(Math.random() * gameUrls.length);
-  const featuredGameUrl = gameUrls[randomIndex];
-
-  const featuredGameDiv = document.getElementById("featured-game");
-  featuredGameDiv.innerHTML = `<iframe src="${featuredGameUrl}" style="width:100%; height:500px;"></iframe>`;
-}

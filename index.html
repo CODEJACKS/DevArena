@@ -19,6 +19,7 @@
     </nav>
     <h2>Hello!👋 Welcome to DevArena, A place where you can play games unblocked no ads. FREE!</h2>
     <div id="countdown"></div>
+    <div id="featured-game"></div>
     <a href="Categories/cat1.html" class="custom-button">Adventure</a>
 <a href="Categories/cat2.html" class="custom-button">Clicking/Button</a>
 <a href="Categories/cat3.html" class="custom-button">Shooting</a>
@@ -38,6 +39,12 @@
       }
       updateCountdown();
       setInterval(updateCountdown, 86400000); // Update every 24 hours
+    </script>
+    <script src="JS/myscript.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        displayFeaturedGame();
+      });
     </script>
   </body>
 </html>

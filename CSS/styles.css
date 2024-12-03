@@ -65,3 +65,20 @@ body {
   text-align: center;
   margin-top: 25px;
 }
+
+/* Pd4d3 */
+#featured-game {
+  background-color: #f9f9f9; /* Light grey background */
+  border: 2px solid #ddd; /* Light grey border */
+  padding: 20px;
+  margin: 20px 0;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+  border-radius: 10px; /* Rounded corners */
+  transition: all 0.3s ease; /* Smooth hover effect */
+}
+
+#featured-game:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow effect on hover */
+  transform: translateY(-2px); /* Slight lift effect on hover */
+}

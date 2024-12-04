@@ -211,12 +211,36 @@ const supabaseUrl = 'https://wvhnfbbmjnfikqivbkwl.supabase.co';
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Ind2aG5mYmJtam5maWtxaXZia3dsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzMzMzgyODUsImV4cCI6MjA0ODkxNDI4NX0.CwBsoEm9XmfMXPKE_7EHzidIeoKG0xSFq0lWzr777BY';
 
 const supabase = createClient(supabaseUrl, supabaseKey);
-async function login(email, password) {
-  const { user, error } = await supabase.auth.signIn({ email, password });
+async function signUp(email, password) {
+  const { user, error } = await supabase.auth.signUp({
+    email: email,
+    password: password,
+  });
+
+  if (error) {
+    console.error('Error signing up:', error.message);
+    return null;
+  }
+
+  console.log('User signed up:', user);
+  return user;
+}
+
+    console.log('User is not authenticated');
+  }
+});
+async function signIn(email, password) {
+  const { user, error } = await supabase.auth.signIn({
+    email: email,
+    password: password,
+  });
+
   if (error) {
     console.error('Error logging in:', error.message);
-    return false;
+    return null;
   }
+
+  console.log('User logged in:', user);
   return user;
 }
 supabase.auth.onAuthStateChange((event, session) => {
@@ -226,5 +250,6 @@ supabase.auth.onAuthStateChange((event, session) => {
     console.log('User is not authenticated');
   }
 });
+
 
 

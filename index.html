@@ -30,6 +30,70 @@
     <H2>NEW GAME HAS BEEN ADDED</H2>
     <h3>Delaford</h3>
     <a href="games/delaford.html" class="custom-button">Try Now</a>
+
+    <!-- Social media sharing options -->
+    <div id="social-media">
+      <h2>Share with your friends!</h2>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://codejacks.github.io/DevArena" target="_blank">Share on Facebook</a>
+      <a href="https://twitter.com/intent/tweet?url=https://codejacks.github.io/DevArena&text=Check%20out%20this%20awesome%20game%20website!" target="_blank">Share on Twitter</a>
+    </div>
+
+    <!-- Comment section or forum -->
+    <div id="comments">
+      <h2>Comments</h2>
+      <form id="comment-form">
+        <label for="comment">Leave a comment:</label>
+        <textarea id="comment" name="comment" rows="4" cols="50"></textarea>
+        <button type="submit">Submit</button>
+      </form>
+      <div id="comment-list">
+        <!-- User comments will be dynamically added here -->
+      </div>
+    </div>
+
+    <!-- Newsletter or email subscription feature -->
+    <div id="newsletter">
+      <h2>Subscribe to our newsletter</h2>
+      <form id="subscription-form">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+
+    <!-- User account creation and personalization options -->
+    <div id="user-account">
+      <h2>Create an account</h2>
+      <form id="account-form">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+        <button type="submit">Create Account</button>
+      </form>
+    </div>
+
+    <!-- Website appearance customization options -->
+    <div id="customization">
+      <h2>Customize your experience</h2>
+      <form id="customization-form">
+        <label for="theme">Choose a theme:</label>
+        <select id="theme" name="theme">
+          <option value="light">Light</option>
+          <option value="dark">Dark</option>
+        </select>
+        <button type="submit">Apply</button>
+      </form>
+    </div>
+
+    <!-- Personalized game recommendations -->
+    <div id="recommendations">
+      <h2>Recommended for you</h2>
+      <ul id="recommendation-list">
+        <!-- Personalized game recommendations will be dynamically added here -->
+      </ul>
+    </div>
+
     <script>
       function updateCountdown() {
         const now = new Date();

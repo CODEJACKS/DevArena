@@ -65,3 +65,98 @@ body {
   text-align: center;
   margin-top: 25px;
 }
+
+/* P67cc */
+#leaderboard {
+  margin-top: 20px;
+}
+
+#leaderboard h2 {
+  font-size: 2em;
+  color: #FFA500;
+}
+
+#high-scores {
+  list-style-type: none;
+  padding: 0;
+}
+
+#high-scores li {
+  font-size: 1.5em;
+  color: #FFFFFF;
+  background-color: #333;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 10px;
+}
+
+#achievements {
+  margin-top: 20px;
+}
+
+#achievements h2 {
+  font-size: 2em;
+  color: #FFA500;
+}
+
+#achievement-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+#achievement-list li {
+  font-size: 1.5em;
+  color: #FFFFFF;
+  background-color: #333;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 10px;
+}
+
+#voting-system {
+  margin-top: 20px;
+}
+
+#voting-system h2 {
+  font-size: 2em;
+  color: #FFA500;
+}
+
+#rating-form {
+  display: flex;
+  flex-direction: column;
+}
+
+#rating-form label {
+  font-size: 1.2em;
+  color: #FFFFFF;
+}
+
+#rating-form select {
+  font-size: 1.2em;
+  padding: 5px;
+  margin: 10px 0;
+}
+
+#rating-form button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#rating-form button:hover {
+  background-color: #45a049;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#reviews {
+  margin-top: 20px;
+}
+
+#reviews div {
+  font-size: 1.2em;
+  color: #FFFFFF;

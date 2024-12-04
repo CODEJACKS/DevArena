@@ -211,61 +211,75 @@ const supabaseUrl = 'https://wvhnfbbmjnfikqivbkwl.supabase.co';
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Ind2aG5mYmJtam5maWtxaXZia3dsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzMzMzgyODUsImV4cCI6MjA0ODkxNDI4NX0.CwBsoEm9XmfMXPKE_7EHzidIeoKG0xSFq0lWzr777BY';
 
 const supabase = createClient(supabaseUrl, supabaseKey);
+async function signIn(email, password) {
+  const { data: users, error } = await supabase
+    .from('users')
+    .select('password_hash')
+    .eq('email', email)
+    .single();
+
+  if (error || !users) {
+    console.error('Error fetching user:', error?.message || 'User not found');
+    return null;
+  }
+
+  const isPasswordValid = await verifyPassword(password, users.password_hash);
+
+  if (!isPasswordValid) {
+    console.error('Invalid password');
+    return null;
+  }
+
+  console.log('User logged in successfully');
+  return true;
+}
 async function signUp(email, password) {
-  const { user, error } = await supabase.auth.signUp({
-    email: email,
-    password: password,
-  });
+  const passwordHash = await hashPassword(password);
+
+  const { data, error } = await supabase
+    .from('users')
+    .insert([
+      { email: email, password_hash: passwordHash }
+    ]);
 
   if (error) {
     console.error('Error signing up:', error.message);
     return null;
   }
 
-  console.log('User signed up:', user);
-  return user;
+  return data;
 }
 
-    console.log('User is not authenticated');
-  }
-});
-async function signIn(email, password) {
-  const { user, error } = await supabase.auth.signIn({
-    email: email,
-    password: password,
+const crypto = require('crypto');
+
+function hashPassword(password) {
+  return new Promise((resolve, reject) => {
+    const salt = crypto.randomBytes(16).toString('hex');
+    crypto.scrypt(password, salt, 64, (err, derivedKey) => {
+      if (err) reject(err);
+      resolve(`${salt}:${derivedKey.toString('hex')}`);
+    });
   });
-
-  if (error) {
-    console.error('Error logging in:', error.message);
-    return null;
-  }
-
-  console.log('User logged in:', user);
-  return user;
 }
-supabase.auth.onAuthStateChange((event, session) => {
-  if (session) {
-    console.log('User is authenticated:', session.user.email);
-  } else {
-    console.log('User is not authenticated');
-  }
+
+// Example usage:
+hashPassword('your-password').then(hash => {
+  console.log('Hashed password:', hash);
 });
-document.getElementById('signup-form').addEventListener('submit', handleSignUp);
-document.getElementById('signin-form').addEventListener('submit', handleSignIn);
-
-async function handleSignUp(event) {
-  event.preventDefault();
-  const email = document.getElementById('signup-email').value;
-  const password = document.getElementById('signup-password').value;
-  await signUp(email, password);
+function verifyPassword(password, hash) {
+  return new Promise((resolve, reject) => {
+    const [salt, key] = hash.split(':');
+    crypto.scrypt(password, salt, 64, (err, derivedKey) => {
+      if (err) reject(err);
+      resolve(key === derivedKey.toString('hex'));
+    });
+  });
 }
 
-async function handleSignIn(event) {
-  event.preventDefault();
-  const email = document.getElementById('signin-email').value;
-  const password = document.getElementById('signin-password').value;
-  await signIn(email, password);
-}
+// Example usage:
+verifyPassword('your-password', 'stored-hash').then(isValid => {
+  console.log('Password is valid:', isValid);
+});
 
 
 

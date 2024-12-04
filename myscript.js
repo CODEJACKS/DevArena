@@ -250,6 +250,22 @@ supabase.auth.onAuthStateChange((event, session) => {
     console.log('User is not authenticated');
   }
 });
+document.getElementById('signup-form').addEventListener('submit', handleSignUp);
+document.getElementById('signin-form').addEventListener('submit', handleSignIn);
+
+async function handleSignUp(event) {
+  event.preventDefault();
+  const email = document.getElementById('signup-email').value;
+  const password = document.getElementById('signup-password').value;
+  await signUp(email, password);
+}
+
+async function handleSignIn(event) {
+  event.preventDefault();
+  const email = document.getElementById('signin-email').value;
+  const password = document.getElementById('signin-password').value;
+  await signIn(email, password);
+}
 
 
 

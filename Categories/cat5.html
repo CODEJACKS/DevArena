@@ -1,87 +1,94 @@
-<!docype html>
-<html lang= en>
-  <link rel="stylesheet" href="https://codejacks.github.io/DevArena/CSS/styles.css">
-  <link rel="icon" href="https://codejacks.github.io/DevArena/images/dbysagames.png" type="png">
-  <title>Sports</title>
-  <h1>Sports Games</h1>
-  <p>Enjoy the games!</p>
-  <h3>Please remember to recommend us to your friends!</h3>
-  <div id="container">
-    <a href="https://codejacks.github.io/DevArena/games/retrobowl.html" class="custom-button">RetroBowl</a>
-    <a href="https://codejacks.github.io/DevArena/games/basketrandom.html" class="custom-button">Basket Random</a>
-  </div>
-
-  <div id="leaderboard">
-    <h2>Leaderboard</h2>
-    <ul id="high-scores">
-      <!-- High scores will be dynamically added here -->
-    </ul>
-  </div>
-
-  <div id="achievements">
-    <h2>Achievements</h2>
-    <ul id="achievement-list">
-      <!-- Achievements will be dynamically added here -->
-    </ul>
-  </div>
-
-  <div id="voting-system">
-    <h2>Rate and Review</h2>
-    <form id="rating-form">
-      <label for="rating">Rate this game:</label>
-      <select id="rating" name="rating">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-      </select>
-      <button type="submit">Submit</button>
-    </form>
-    <div id="reviews">
-      <!-- User reviews will be dynamically added here -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://codejacks.github.io/DevArena/CSS/styles.css">
+    <link rel="icon" href="https://codejacks.github.io/DevArena/images/dbysagames.png" type="png">
+    <title>Sports</title>
+  </head>
+  <body>
+    <h1>Sports Games</h1>
+    <p>Enjoy the games!</p>
+    <h3>Please remember to recommend us to your friends!</h3>
+    <div class="container">
+      <a href="https://codejacks.github.io/DevArena/games/retrobowl.html" class="custom-button">RetroBowl</a>
+      <a href="https://codejacks.github.io/DevArena/games/basketrandom.html" class="custom-button">Basket Random</a>
     </div>
-  </div>
 
-<script>
-  var content = document.getElementById("container");
-  content.style.display="block";
+    <div id="leaderboard">
+      <h2>Leaderboard</h2>
+      <ul id="high-scores">
+        <!-- High scores will be dynamically added here -->
+      </ul>
+    </div>
 
-  // Leaderboard and high score system
-  var highScores = [
-    { name: "Player1", score: 1000 },
-    { name: "Player2", score: 900 },
-    { name: "Player3", score: 800 }
-  ];
+    <div id="achievements">
+      <h2>Achievements</h2>
+      <ul id="achievement-list">
+        <!-- Achievements will be dynamically added here -->
+      </ul>
+    </div>
 
-  var highScoresList = document.getElementById("high-scores");
-  highScores.forEach(function(score) {
-    var listItem = document.createElement("li");
-    listItem.textContent = score.name + ": " + score.score;
-    highScoresList.appendChild(listItem);
-  });
+    <div id="voting-system">
+      <h2>Rate and Review</h2>
+      <form id="rating-form">
+        <label for="rating">Rate this game:</label>
+        <select id="rating" name="rating">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+        <button type="submit">Submit</button>
+      </form>
+      <div id="reviews">
+        <!-- User reviews will be dynamically added here -->
+      </div>
+    </div>
 
-  // Achievements or badges
-  var achievements = [
-    { name: "First Win", description: "Win your first game" },
-    { name: "High Scorer", description: "Score over 1000 points" }
-  ];
+    <script>
+      var content = document.getElementById("container");
+      content.style.display="block";
 
-  var achievementList = document.getElementById("achievement-list");
-  achievements.forEach(function(achievement) {
-    var listItem = document.createElement("li");
-    listItem.textContent = achievement.name + ": " + achievement description;
-    achievementList.appendChild(listItem);
-  });
+      // Leaderboard and high score system
+      var highScores = [
+        { name: "Player1", score: 1000 },
+        { name: "Player2", score: 900 },
+        { name: "Player3", score: 800 }
+      ];
 
-  // Voting system for rating and reviewing games
-  var ratingForm = document.getElementById("rating-form");
-  ratingForm.addEventListener("submit", function(event) {
-    event.preventDefault();
-    var rating = document.getElementById("rating").value;
-    var review = "User rated this game " + rating + " out of 5.";
-    var reviewDiv = document.createElement("div");
-    reviewDiv.textContent = review;
-    document.getElementById("reviews").appendChild(reviewDiv);
-  });
-</script>
+      var highScoresList = document.getElementById("high-scores");
+      highScores.forEach(function(score) {
+        var listItem = document.createElement("li");
+        listItem.textContent = score.name + ": " + score.score;
+        highScoresList.appendChild(listItem);
+      });
+
+      // Achievements or badges
+      var achievements = [
+        { name: "First Win", description: "Win your first game" },
+        { name: "High Scorer", description: "Score over 1000 points" }
+      ];
+
+      var achievementList = document.getElementById("achievement-list");
+      achievements.forEach(function(achievement) {
+        var listItem = document.createElement("li");
+        listItem.textContent = achievement.name + ": " + achievement.description;
+        achievementList.appendChild(listItem);
+      });
+
+      // Voting system for rating and reviewing games
+      var ratingForm = document.getElementById("rating-form");
+      ratingForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+        var rating = document.getElementById("rating").value;
+        var review = "User rated this game " + rating + " out of 5.";
+        var reviewDiv = document.createElement("div");
+        reviewDiv.textContent = review;
+        document.getElementById("reviews").appendChild(reviewDiv);
+      });
+    </script>
+  </body>
+</html>

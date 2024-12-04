@@ -1,14 +1,16 @@
 <!DOCTYPE html>
-<link rel="stylesheet" href="CSS/styles.css">
-<html lang= en>
+<html lang="en">
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/styles.css">
     <script src="https://cdn.supabase.com/js/supabase/v1/index.js"></script>
     <script src="myscript.js"></script>
-<title> DevArena </title>
-<link rel="icon" href="images/dbysagames.png" type="png">
-    <h1>DevArena</h1>
+    <title>DevArena</title>
+    <link rel="icon" href="images/dbysagames.png" type="png">
   </head>
   <body>
+    <h1>DevArena</h1>
     <nav class="navbar">
       <a href="index.html">Home</a>
       <a href="Categories/cat1.html">Adventure</a>
@@ -21,25 +23,25 @@
     </nav>
     <h2>Hello!👋 Welcome to DevArena, A place where you can play games unblocked no ads. FREE!</h2>
     <div id="countdown"></div>
-    <a href="Categories/cat1.html" class="custom-button">Adventure</a>
-<a href="Categories/cat2.html" class="custom-button">Clicking/Button</a>
-<a href="Categories/cat3.html" class="custom-button">Shooting</a>
-<a href="Categories/cat4.html" class="custom-button">WASD</a>
-<a href="Categories/cat5.html" class="custom-button">Sports</a>
-<p>Thanks for visiting!</p>
-<a href="other files/form.html" class="custom-button">Suggestion form</a>
-<a href="other files/about-us.md" class="custom-button">About Us</a>
-    <H2>NEW GAME HAS BEEN ADDED</H2>
-    <h3>Delaford</h3>
-    <a href="games/delaford.html" class="custom-button">Try Now</a>
-
+    <div class="container">
+      <a href="Categories/cat1.html" class="custom-button">Adventure</a>
+      <a href="Categories/cat2.html" class="custom-button">Clicking/Button</a>
+      <a href="Categories/cat3.html" class="custom-button">Shooting</a>
+      <a href="Categories/cat4.html" class="custom-button">WASD</a>
+      <a href="Categories/cat5.html" class="custom-button">Sports</a>
+      <p>Thanks for visiting!</p>
+      <a href="other files/form.html" class="custom-button">Suggestion form</a>
+      <a href="other files/about-us.md" class="custom-button">About Us</a>
+      <h2>NEW GAME HAS BEEN ADDED</h2>
+      <h3>Delaford</h3>
+      <a href="games/delaford.html" class="custom-button">Try Now</a>
+    </div>
     <!-- Social media sharing options -->
     <div id="social-media">
       <h2>Share with your friends!</h2>
       <a href="https://www.facebook.com/sharer/sharer.php?u=https://codejacks.github.io/DevArena" target="_blank">Share on Facebook</a>
       <a href="https://twitter.com/intent/tweet?url=https://codejacks.github.io/DevArena&text=Check%20out%20this%20awesome%20game%20website!" target="_blank">Share on Twitter</a>
     </div>
-
     <!-- Comment section or forum -->
     <div id="comments">
       <h2>Comments</h2>
@@ -52,7 +54,6 @@
         <!-- User comments will be dynamically added here -->
       </div>
     </div>
-
     <!-- Newsletter or email subscription feature -->
     <div id="newsletter">
       <h2>Subscribe to our newsletter</h2>
@@ -62,7 +63,6 @@
         <button type="submit">Subscribe</button>
       </form>
     </div>
-
     <!-- Personalized game recommendations -->
     <div id="recommendations">
       <h2>Recommended for you</h2>
@@ -70,7 +70,6 @@
         <!-- Personalized game recommendations will be dynamically added here -->
       </ul>
     </div>
-
     <script>
       function updateCountdown() {
         const now = new Date();

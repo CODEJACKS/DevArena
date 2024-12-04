@@ -159,7 +159,6 @@ body {
 
 #reviews div {
   font-size: 1.2em;
-  color: #FFFFFF;
 }
 
 /* P1ea6 */
@@ -292,21 +291,5 @@ body {
 
 #cookie-consent-banner button:hover {
   background-color: #45a049;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* Pf479 */
-#logout-button {
-  background-color: #FF0000;
-  color: white;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-#logout-button:hover {
-  background-color: #CC0000;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }

@@ -160,3 +160,110 @@ body {
 #reviews div {
   font-size: 1.2em;
   color: #FFFFFF;
+}
+
+/* P1ea6 */
+#user-account {
+  margin-top: 20px;
+}
+
+#user-account h2 {
+  font-size: 2em;
+  color: #FFA500;
+}
+
+#account-form {
+  display: flex;
+  flex-direction: column;
+}
+
+#account-form label {
+  font-size: 1.2em;
+  color: #FFFFFF;
+}
+
+#account-form input {
+  font-size: 1.2em;
+  padding: 5px;
+  margin: 10px 0;
+}
+
+#account-form button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#account-form button:hover {
+  background-color: #45a049;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* P1ea6 */
+#customization {
+  margin-top: 20px;
+}
+
+#customization h2 {
+  font-size: 2em;
+  color: #FFA500;
+}
+
+#customization-form {
+  display: flex;
+  flex-direction: column;
+}
+
+#customization-form label {
+  font-size: 1.2em;
+  color: #FFFFFF;
+}
+
+#customization-form select {
+  font-size: 1.2em;
+  padding: 5px;
+  margin: 10px 0;
+}
+
+#customization-form button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#customization-form button:hover {
+  background-color: #45a049;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* P6677 */
+#recommendations {
+  margin-top: 20px;
+}
+
+#recommendations h2 {
+  font-size: 2em;
+  color: #FFA500;
+}
+
+#recommendation-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+#recommendation-list li {
+  font-size: 1.5em;
+  color: #FFFFFF;
+  background-color: #333;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 10px;
+}

@@ -4,8 +4,8 @@
   <link rel="icon" href="https://codejacks.github.io/DevArena/images/dbysagames.png" type="png">
   <title>Sports</title>
   <h1>Sports Games</h1>
-   <p>Please wait 5 seconds for games to show up.</p>
-  <h3>While you are waiting, Please remember to recommend us to your friends!</h3>
+  <p>Enjoy the games!</p>
+  <h3>Please remember to recommend us to your friends!</h3>
   <div id="container">
     <a href="https://codejacks.github.io/DevArena/games/retrobowl.html" class="custom-button">RetroBowl</a>
     <a href="https://codejacks.github.io/DevArena/games/basketrandom.html" class="custom-button">Basket Random</a>
@@ -45,10 +45,7 @@
 
 <script>
   var content = document.getElementById("container");
-  content.style.display="none";
-  setTimeout(function(){
-    content.style.display="block";
-  }, 5000);
+  content.style.display="block";
 
   // Leaderboard and high score system
   var highScores = [
@@ -73,7 +70,7 @@
   var achievementList = document.getElementById("achievement-list");
   achievements.forEach(function(achievement) {
     var listItem = document.createElement("li");
-    listItem.textContent = achievement.name + ": " + achievement.description;
+    listItem.textContent = achievement.name + ": " + achievement description;
     achievementList.appendChild(listItem);
   });
 

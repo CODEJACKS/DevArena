@@ -103,6 +103,8 @@ document.addEventListener("DOMContentLoaded", function() {
     alert("Account created for username: " + username);
     document.getElementById("username").value = "";
     document.getElementById("password").value = "";
+    localStorage.setItem("username", username);
+    localStorage.setItem("password", password);
   });
 
   // Website appearance customization options
@@ -117,7 +119,20 @@ document.addEventListener("DOMContentLoaded", function() {
       document.body.style.backgroundColor = "#000000";
       document.body.style.color = "#FFFFFF";
     }
+    localStorage.setItem("theme", theme);
   });
+
+  // Apply saved theme on page load
+  var savedTheme = localStorage.getItem("theme");
+  if (savedTheme) {
+    if (savedTheme === "light") {
+      document.body.style.backgroundColor = "#FFFFFF";
+      document.body.style.color = "#000000";
+    } else if (savedTheme === "dark") {
+      document.body.style.backgroundColor = "#000000";
+      document.body.style.color = "#FFFFFF";
+    }
+  }
 
   // Personalized game recommendations
   var recommendations = [
@@ -134,4 +149,24 @@ document.addEventListener("DOMContentLoaded", function() {
     listItem.appendChild(link);
     recommendationList.appendChild(listItem);
   });
+
+  // Load personalized game recommendations based on user preferences
+  var userPreferences = localStorage.getItem("userPreferences");
+  if (userPreferences) {
+    userPreferences = JSON.parse(userPreferences);
+    // Update recommendations based on user preferences
+    // This is a placeholder, you can implement your own logic here
+    recommendations = recommendations.filter(function(recommendation) {
+      return userPreferences.includes(recommendation.name);
+    });
+    recommendationList.innerHTML = "";
+    recommendations.forEach(function(recommendation) {
+      var listItem = document.createElement("li");
+      var link = document.createElement("a");
+      link.href = recommendation.link;
+      link.textContent = recommendation.name;
+      listItem.appendChild(link);
+      recommendationList.appendChild(listItem);
+    });
+  }
 });

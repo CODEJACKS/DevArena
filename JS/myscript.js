@@ -107,6 +107,21 @@ document.addEventListener("DOMContentLoaded", function() {
     localStorage.setItem("password", password);
   });
 
+  // Check for existing user session
+  var savedUsername = localStorage.getItem("username");
+  var savedPassword = localStorage.getItem("password");
+  if (savedUsername && savedPassword) {
+    alert("Welcome back, " + savedUsername + "!");
+  }
+
+  // Logout functionality
+  var logoutButton = document.getElementById("logout-button");
+  logoutButton.addEventListener("click", function() {
+    localStorage.removeItem("username");
+    localStorage.removeItem("password");
+    alert("You have been logged out.");
+  });
+
   // Website appearance customization options
   var customizationForm = document.getElementById("customization-form");
   customizationForm.addEventListener("submit", function(event) {

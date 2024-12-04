@@ -267,3 +267,46 @@ body {
   margin: 5px 0;
   border-radius: 10px;
 }
+
+/* P2d36 */
+#cookie-consent-banner {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  text-align: center;
+  padding: 10px;
+  z-index: 1000;
+}
+
+#cookie-consent-banner button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#cookie-consent-banner button:hover {
+  background-color: #45a049;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Pf479 */
+#logout-button {
+  background-color: #FF0000;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#logout-button:hover {
+  background-color: #CC0000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

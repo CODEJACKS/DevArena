@@ -184,4 +184,24 @@ document.addEventListener("DOMContentLoaded", function() {
       recommendationList.appendChild(listItem);
     });
   }
+
+  // Add event listener for "Accept" button to hide the cookies banner
+  var acceptCookiesButton = document.getElementById("accept-cookies");
+  acceptCookiesButton.addEventListener("click", function() {
+    document.getElementById("cookie-consent-banner").style.display = "none";
+    localStorage.setItem("cookieConsent", "accepted");
+  });
+
+  // Add event listener for "Decline" button to hide the cookies banner
+  var declineCookiesButton = document.getElementById("decline-cookies");
+  declineCookiesButton.addEventListener("click", function() {
+    document.getElementById("cookie-consent-banner").style.display = "none";
+    localStorage.setItem("cookieConsent", "declined");
+  });
+
+  // Check user preference in local storage to hide the cookies banner on page load
+  var cookieConsent = localStorage.getItem("cookieConsent");
+  if (cookieConsent === "accepted" || cookieConsent === "declined") {
+    document.getElementById("cookie-consent-banner").style.display = "none";
+  }
 });

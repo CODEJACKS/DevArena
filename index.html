@@ -3,6 +3,7 @@
 <html lang= en>
   <head>
     <script src="https://cdn.supabase.com/js/supabase/v1/index.js"></script>
+    <script src="JS/myscript.js"></script>
 <title> DevArena </title>
 <link rel="icon" href="images/dbysagames.png" type="png">
     <h1>DevArena</h1>
@@ -62,35 +63,21 @@
       </form>
     </div>
 
-    <!-- User account creation and personalization options -->
-    <div id="user-account">
-      <h2>Create an account</h2>
-      <form id="account-form">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username">
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password">
-        <button type="submit">Create Account</button>
-      </form>
-    </div>
+    <!-- Sign-Up Form -->
+<form id="signup-form" onsubmit="handleSignUp(event)">
+  <input type="email" id="signup-email" placeholder="Email" required>
+  <input type="password" id="signup-password" placeholder="Password" required>
+  <button type="submit">Sign Up</button>
+</form>
 
-    <!-- Logout button -->
-    <div id="logout">
-      <button id="logout-button">Logout</button>
-    </div>
-
-    <!-- Website appearance customization options -->
-    <div id="customization">
-      <h2>Customize your experience</h2>
-      <form id="customization-form">
-        <label for="theme">Choose a theme:</label>
-        <select id="theme" name="theme">
-          <option value="light">Light</option>
-          <option value="dark">Dark</option>
-        </select>
-        <button type="submit">Apply</button>
-      </form>
-    </div>
+<!-- Sign-In Form -->
+<form id="signin-form" onsubmit="handleSignIn(event)">
+  <input type="email" id="signin-email" placeholder="Email" required>
+  <input type="password" id="signin-password" placeholder="Password" required>
+  <button type="submit">Sign In</button>
+</form>
+   
+    
 
     <!-- Personalized game recommendations -->
     <div id="recommendations">

@@ -24,7 +24,6 @@ function disableInAppInstallPrompt() {
   installPrompt = null;
   installButton.setAttribute("hidden", "");
 }
-
 // main.js
 
 window.addEventListener("appinstalled", () => {
@@ -36,25 +35,6 @@ function disableInAppInstallPrompt() {
   installButton.setAttribute("hidden", "");
 }
 
-const relatedApps = await navigator.getInstalledRelatedApps();
-
-// Search for a specific installed platform-specific app
-const psApp = relatedApps.find((app) => app.id === "codejacks.github.io/DevArena");
-
-if (psApp) {
-  // Update UI as appropriate
-}
-window.addEventListener("beforeinstallprompt", async (event) => {
-  const relatedApps = await navigator.getInstalledRelatedApps();
-
-  // Search for a specific installed platform-specific app
-  const psApp = relatedApps.find((app) => app.id === "com.example.myapp");
-
-  if (psApp) {
-    event.preventDefault();
-    // Update UI as appropriate
-  }
-});
 
 
 

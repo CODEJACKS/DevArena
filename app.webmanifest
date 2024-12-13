@@ -1,0 +1,17 @@
+{
+   "name": "DevArena"
+,
+"icons": [
+    {
+      "src": "images/dbysagames.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+  ,
+  "start_url": "https://codejacks.github.io/DevArena"
+  ,
+"display": "standalone"
+,
+"prefer_related_applications": false
+}

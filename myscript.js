@@ -1,5 +1,3 @@
-// main.js
-
 let installPrompt = null;
 const installButton = document.querySelector("#install");
 
@@ -8,8 +6,6 @@ window.addEventListener("beforeinstallprompt", (event) => {
   installPrompt = event;
   installButton.removeAttribute("hidden");
 });
-
-// main.js
 
 installButton.addEventListener("click", async () => {
   if (!installPrompt) {
@@ -24,21 +20,10 @@ function disableInAppInstallPrompt() {
   installPrompt = null;
   installButton.setAttribute("hidden", "");
 }
-// main.js
 
 window.addEventListener("appinstalled", () => {
   disableInAppInstallPrompt();
 });
-
-function disableInAppInstallPrompt() {
-  installPrompt = null;
-  installButton.setAttribute("hidden", "");
-}
-
-
-
-
-
 
 document.addEventListener("DOMContentLoaded", function() {
   const navbar = document.querySelector(".navbar");

@@ -1,3 +1,15 @@
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/service-worker.js').then(() => {
+    console.log('Service Worker registered successfully.');
+  });
+}
+
+
+
+
+
+
+
 let installPrompt = null;
 const installButton = document.querySelector("#install");
 

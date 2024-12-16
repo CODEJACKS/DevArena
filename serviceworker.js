@@ -6,8 +6,18 @@ self.addEventListener('install', (event) => {
         '/index.html',
         '/styles.css',
         '/script.js',
-        '/icons/icon-192x192.png',
-        '/icons/icon-512x512.png'
+        '/images/DBYSAGAMES.png',
+        '/catergories/cat1.html',
+        '/catergories/cat2.html',
+        '/catergories/cat3.html',
+        '/catergories/cat4.html',
+        '/catergories/cat5.html',
+        '/games/1v1.lol.html',
+        '/games/basketrandom.html',
+        '/games/delaford.html',
+        '/games/geometrydash.html',
+        '/games/eaglercraft.1.8.8.html',
+        '/games/gunspin.html',
       ]);
     })
   );

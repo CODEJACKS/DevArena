@@ -1,0 +1,24 @@
+{
+  "name": "DevArena",
+  "icons": [
+    {
+      "src": "images/dbysagames.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "https://codejacks.github.io/DevArena",
+  "display": "standalone",
+  "prefer_related_applications": false,
+  "description": "Play games no ads! Free Forever! No matter what!",
+  "theme_color": "#000000",
+  "background_color": "#000000",
+  "short_name": "DevArena",
+  "dir": "auto",
+  "lang": "en",
+  "orientation": "any",
+  "categories": [
+    "games",
+    "kids"
+  ]
+}

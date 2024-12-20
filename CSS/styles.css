@@ -1,7 +1,17 @@
+### Enhanced CSS Example
+```css
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 body {
   font-family: 'Roboto', sans-serif;
+  background-image: url('../images/colorkit1.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #333;
+  margin: 0;
+  padding: 0;
 }
 
 h1, h2, h3 {
@@ -9,7 +19,7 @@ h1, h2, h3 {
 }
 
 .custom-button {
-  background: linear-gradient(to right, #4CAF50, #45a049); /* Gradient background */
+  background: linear-gradient(to right, #4CAF50, #45a049);
   border: none;
   color: white;
   padding: 15px 32px;
@@ -19,30 +29,21 @@ h1, h2, h3 {
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
-  border-radius: 25px; /* This makes the button rounded */
-  transition: all 0.3s ease; /* This will smooth out the hover effect */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow effect */
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .custom-button:hover {
-  background: linear-gradient(to right, #45a049, #4CAF50); /* Reverse gradient on hover */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add a shadow effect on hover */
-  transform: translateY(-2px); /* Slight lift effect on hover */
+  background: linear-gradient(to right, #45a049, #4CAF50);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
 }
 
-body {
-  background-image: url('../images/colorkit1.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed; /* Optional: keeps the image fixed while scrolling */
-}
-
-/* Navigation bar styles */
 .navbar {
-  background: linear-gradient(to right, #333, #444); /* Dark color scheme with subtle gradients */
-  font-family: 'Roboto', sans-serif; /* Updated font-family */
-  position: fixed; /* Fixed at the top */
+  background: linear-gradient(to right, #333, #444);
+  font-family: 'Roboto', sans-serif;
+  position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
@@ -55,23 +56,22 @@ body {
   color: white;
   text-decoration: none;
   padding: 10px 20px;
-  transition: all 0.3s ease; /* Smooth hover effect */
+  transition: all 0.3s ease;
 }
 
 .navbar a:hover {
-  background-color: #555; /* Slight color change on hover */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+  background-color: #555;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Grid system for consistent layout */
 .container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
   padding: 20px;
+  margin-top: 80px; /* Adjust for fixed navbar */
 }
 
-/* Media queries for responsive design */
 @media (max-width: 768px) {
   .custom-button {
     padding: 10px 20px;
@@ -118,238 +118,4 @@ body {
   }
 }
 
-/* P31e0 */
-#countdown {
-  font-size: 5em;
-  color: red;
-  text-align: center;
-  margin-top: 25px;
-}
-
-/* P67cc */
-#leaderboard {
-  margin-top: 20px;
-}
-
-#leaderboard h2 {
-  font-size: 2em;
-  color: #FFA500;
-}
-
-#high-scores {
-  list-style-type: none;
-  padding: 0;
-}
-
-#high-scores li {
-  font-size: 1.5em;
-  color: #FFFFFF;
-  background-color: #333;
-  padding: 10px;
-  margin: 5px 0;
-  border-radius: 10px;
-}
-
-#achievements {
-  margin-top: 20px;
-}
-
-#achievements h2 {
-  font-size: 2em;
-  color: #FFA500;
-}
-
-#achievement-list {
-  list-style-type: none;
-  padding: 0;
-}
-
-#achievement-list li {
-  font-size: 1.5em;
-  color: #FFFFFF;
-  background-color: #333;
-  padding: 10px;
-  margin: 5px 0;
-  border-radius: 10px;
-}
-
-#voting-system {
-  margin-top: 20px;
-}
-
-#voting-system h2 {
-  font-size: 2em;
-  color: #FFA500;
-}
-
-#rating-form {
-  display: flex;
-  flex-direction: column;
-}
-
-#rating-form label {
-  font-size: 1.2em;
-  color: #FFFFFF;
-}
-
-#rating-form select {
-  font-size: 1.2em;
-  padding: 5px;
-  margin: 10px 0;
-}
-
-#rating-form button {
-  background-color: #4CAF50;
-  color: white;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-#rating-form button:hover {
-  background-color: #45a049;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-#reviews {
-  margin-top: 20px;
-}
-
-#reviews div {
-  font-size: 1.2em;
-}
-
-/* P1ea6 */
-#user-account {
-  margin-top: 20px;
-}
-
-#user-account h2 {
-  font-size: 2em;
-  color: #FFA500;
-}
-
-#account-form {
-  display: flex;
-  flex-direction: column;
-}
-
-#account-form label {
-  font-size: 1.2em;
-  color: #FFFFFF;
-}
-
-#account-form input {
-  font-size: 1.2em;
-  padding: 5px;
-  margin: 10px 0;
-}
-
-#account-form button {
-  background-color: #4CAF50;
-  color: white;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-#account-form button:hover {
-  background-color: #45a049;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* P1ea6 */
-#customization {
-  margin-top: 20px;
-}
-
-#customization h2 {
-  font-size: 2em;
-  color: #FFA500;
-}
-
-#customization-form {
-  display: flex;
-  flex-direction: column;
-}
-
-#customization-form label {
-  font-size: 1.2em;
-  color: #FFFFFF;
-}
-
-#customization-form select {
-  font-size: 1.2em;
-  padding: 5px;
-  margin: 10px 0;
-}
-
-#customization-form button {
-  background-color: #4CAF50;
-  color: white;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-#customization-form button:hover {
-  background-color: #45a049;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* P6677 */
-#recommendations {
-  margin-top: 20px;
-}
-
-#recommendations h2 {
-  font-size: 2em;
-  color: #FFA500;
-}
-
-#recommendation-list {
-  list-style-type: none;
-  padding: 0;
-}
-
-#recommendation-list li {
-  font-size: 1.5em;
-  color: #FFFFFF;
-  background-color: #333;
-  padding: 10px;
-  margin: 5px 0;
-  border-radius: 10px;
-}
-
-/* P2d36 */
-#cookie-consent-banner {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  color: white;
-  text-align: center;
-  padding: 10px;
-  z-index: 1000;
-}
-
-#cookie-consent-banner button {
-  background-color: #4CAF50;
-  color: white;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-#cookie-consent-banner button:hover {
-  background-color: #45a049;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
+/* Additional custom styles for other elements */

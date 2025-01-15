@@ -1,5 +1,5 @@
 {
-  "name": "DevArena",
+  "name": "GameIsle",
   "icons": [
     {
       "src": "images/dbysagames.png",
@@ -7,13 +7,13 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": "https://codejacks.github.io/DevArena",
+  "start_url": "https://codejacks.github.io/GameIsle",
   "display": "standalone",
   "prefer_related_applications": false,
   "description": "Play games no ads! Free Forever! No matter what!",
   "theme_color": "#000000",
   "background_color": "#000000",
-  "short_name": "DVA",
+  "short_name": "GIS",
   "dir": "auto",
   "lang": "en",
   "orientation": "any",

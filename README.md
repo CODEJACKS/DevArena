@@ -1,2 +1,2 @@
-# DevArena
+# GameIsle
 ## Unleash your potential

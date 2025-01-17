@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://codejacks.github.io/GameIsle/CSS/styles.css">
+    <link rel="manifest" href="app.webmanifest">
+    <link rel="icon" href="https://codejacks.github.io/GameIsle/images/dbysagames.png" type="png">
+    <meta name="keywords" content="GameIsle, free games, no ads games, unblocked games, adventure games, clicking games, button games, shooting games, WASD games, sports games, online games, play games, game categories, leaderboard, achievements, rate and review games, personal assistant AI, Microsoft Copilot Studio">
+    <title>Shooting</title>
+  </head>
+  <body>
+    <%- include('../partials/navbar') %>
+    <h1>Shooting Games</h1>
+    <p>Please wait 5 seconds for games to show up.</p>
+    <h3>While you are waiting, Please remember to recommend us to your friends!</h3>
+    <div class="container">
+      <a href="https://codejacks.github.io/GameIsle/games/1v1.lol.html" class="custom-button">1v1.lol</a>
+      <a href="https://codejacks.github.io/GameIsle/games/gunspin.html" class="custom-button">GunSpin</a>
+    </div>
+
+    <div id="leaderboard">
+      <h2>Leaderboard</h2>
+      <ul id="high-scores">
+        <!-- High scores will be dynamically added here -->
+      </ul>
+    </div>
+
+    <div id="achievements">
+      <h2>Achievements</h2>
+      <ul id="achievement-list">
+        <!-- Achievements will be dynamically added here -->
+      </ul>
+    </div>
+
+    <div id="voting-system">
+      <h2>Rate and Review</h2>
+      <form id="rating-form">
+        <label for="rating">Rate this game:</label>
+        <select id="rating" name="rating">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+        <button type="submit">Submit</button>
+      </form>
+      <div id="reviews">
+        <!-- User reviews will be dynamically added here -->
+      </div>
+    </div>
+
+    <script>
+      var content = document.getElementById("container");
+      content.style.display="block";
+
+      // Leaderboard and high score system
+      var highScores = [
+        { name: "Player1", score: 1000 },
+        { name: "Player2", score: 900 },
+        { name: "Player3", score: 800 }
+      ];
+
+      var highScoresList = document.getElementById("high-scores");
+      highScores.forEach(function(score) {
+        var listItem = document.createElement("li");
+        listItem.textContent = score.name + ": " + score.score;
+        highScoresList.appendChild(listItem);
+      });
+
+      // Achievements or badges
+      var achievements = [
+        { name: "First Win", description: "Win your first game" },
+        { name: "High Scorer", description: "Score over 1000 points" }
+      ];
+
+      var achievementList = document.getElementById("achievement-list");
+      achievements.forEach(function(achievement) {
+        var listItem = document.createElement("li");
+        listItem.textContent = achievement.name + ": " + achievement.description;
+        achievementList.appendChild(listItem);
+      });
+
+      // Voting system for rating and reviewing games
+      var ratingForm = document.getElementById("rating-form");
+      ratingForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+        var rating = document.getElementById("rating").value;
+        var review = "User rated this game " + rating + " out of 5.";
+        var reviewDiv = document.createElement("div");
+        reviewDiv.textContent = review;
+        document.getElementById("reviews").appendChild(reviewDiv);
+      });
+    </script>
+    <%- include('../partials/footer') %>
+  </body>
+</html>

@@ -18,6 +18,23 @@ self.addEventListener('install', (event) => {
         '/games/geometrydash.html',
         '/games/eaglercraft.1.8.8.html',
         '/games/gunspin.html',
+        '/categories/ai',
+        '/categories/cat1',
+        '/categories/cat2',
+        '/categories/cat3',
+        '/categories/cat4',
+        '/categories/cat5',
+        '/games/1v1.lol',
+        '/games/basketrandom',
+        '/games/chatbot',
+        '/games/cookie-clicker',
+        '/games/delaford',
+        '/games/geometrydash',
+        '/games/gunspin',
+        '/games/imagegen',
+        '/games/polytrack',
+        '/games/retrobowl',
+        '/games/snowrider3d'
       ]);
     })
   );

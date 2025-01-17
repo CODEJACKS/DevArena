@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="GameIsle, free games, no ads games, unblocked games, adventure games, clicking games, button games, shooting games, WASD games, sports games, online games, play games, game categories, leaderboard, achievements, rate and review games, personal assistant AI, Microsoft Copilot Studio">
+    <title>Image Generator</title>
+    <link rel="icon" href="https://codejacks.github.io/GameIsle/images/dbysagames.png" type="png">
+    <link rel="manifest" href="app.webmanifest">
+  </head>
+  <body>
+    <%- include('../partials/navbar') %>
+    <script
+      type="module"
+      src="https://gradio.s3-us-west-2.amazonaws.com/5.0.1/gradio.js"
+    ></script>
+    <gradio-app src="https://elitegamercj-stabilityai-stable-diffusion-3-5-large.hf.space"></gradio-app>
+    <%- include('../partials/footer') %>
+  </body>
+</html>
